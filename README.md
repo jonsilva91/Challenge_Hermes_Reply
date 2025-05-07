@@ -1,4 +1,4 @@
-# FIAP - Faculdade de Informática e Administração Paulista
+# FIAP - Faculdade de Informática e Administração Paulista 
 
 <p align="center">
 <a href= "https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Admnistração Paulista" border="0" width=40% height=40%></a>
@@ -6,7 +6,7 @@
 
 <br>
 
-# Nome do projeto
+# PreventAI - Solução Inteligente para Prevenção de Falhas em Linhas de Produção Industrial
 
 ## Nome do grupo
 
@@ -23,50 +23,263 @@
 ### Coordenador(a)
 - <a href="https://www.linkedin.com/company/inova-fusca">Nome do Coordenador</a>
 
-
+---
 ## 📜 Descrição
 
-*Descreva seu projeto com base no texto do PBL (até 600 palavras)*
+Este projeto é uma proposta de solução para o desafio lançado pela **Hermes Reply**, empresa especializada em soluções digitais industriais. O objetivo é desenvolver uma solução capaz de **prevenir falhas em linhas de produção** por meio da aplicação de **Inteligência Artificial, IoT, Simulação Avançada e Gêmeos Digitais Executáveis**, promovendo eficiência, segurança e continuidade operacional.
+
+### 🎯 Gêmeo Digital Executável com IA Generativa e Autoaprendizado
+
+A solução baseia-se no desenvolvimento de um **Gêmeo Digital Executável (xDT)**, que atua como uma réplica virtual de ativos industriais integrados a sensores IoT (via ESP32). Este modelo simula continuamente o comportamento real das máquinas, permitindo:
+
+- Execução de **simulações dinâmicas e contínuas**, baseadas em dados reais e modelos físicos;
+- **Geração de cenários sintéticos inéditos** com o apoio de **IA generativa**, antecipando falhas críticas antes mesmo que ocorram;
+- **Aprendizado autônomo (Self-Learning)**, com ajustes automáticos nos parâmetros do modelo baseando-se na resposta real das máquinas, reduzindo a necessidade de intervenção humana.
+
+### 🧠 Plataforma Inteligente de Simulação Industrial
+
+A proposta também contempla uma **Plataforma Inteligente de Simulação**, voltada para ambientes industriais complexos. Por meio de funcionalidades avançadas como:
+
+- **Simulação de cenários hipotéticos** (“What-if Scenarios”), como sobrecarga, manutenção atrasada ou falhas inesperadas, sem impactar o ambiente físico;
+- **Atualização contínua dos modelos preditivos**, com adaptação automática a novas condições operacionais (Simulação Contínua e Dinâmica);
+- **Geração de insights, alertas inteligentes e recomendações automáticas** para operadores e engenheiros, apoiando decisões estratégicas.
+
+Essa plataforma fornece uma **visão proativa e adaptativa**, ajudando na otimização de processos e aumento da confiabilidade dos sistemas.
+
+### 🤖 Sistema Autônomo com Aprendizado Reforçado e Gamificação
+
+Como diferencial, o sistema integra também um mecanismo de **autonomia proativa**, no qual:
+
+- A IA **ajusta automaticamente, em tempo real**, os parâmetros operacionais das máquinas para evitar falhas iminentes;
+- Um modelo de **Reinforcement Learning (RL)** permite **auto-otimização baseada em consequências reais**, refinando continuamente o desempenho do sistema;
+- Integração com **sistemas ERP/MES** permite emissão automática de ordens de serviço com base nas decisões do gêmeo digital;
+- Um **componente de gamificação** recompensa operadores que antecipam falhas previstas pela IA, incentivando engajamento, cultura de prevenção e colaboração ativa na manutenção preditiva.
+
+Essa combinação de **simulação inteligente, aprendizado contínuo e automação adaptativa** representa um avanço significativo na manutenção preditiva industrial, posicionando a solução como uma referência inovadora na Indústria 4.0.
+
+---
+
+## 🧰 Tecnologias Utilizadas
+
+- **Linguagens:**
+  - `Python 3.10` (linguagem principal para processamento, IA e simulação)
+  - `R` (análises estatísticas exploratórias e suporte a relatórios)
+
+- **Bibliotecas para análise e aprendizado de máquina (Python):**
+  - `Pandas` (manipulação de dados)
+  - `Scikit-learn` (modelos preditivos e validação)
+  - `TensorFlow` + `Keras` (modelagem de deep learning e autoaprendizado)
+  - `Stable-Baselines3` (aprendizado por reforço - RL)
+
+- **IA Generativa:**
+  - `GANs` (para geração de dados sintéticos e simulações de falhas inéditas)
+
+- **Simulação Física e Modelagem:**
+  - `SciPy` (cálculos numéricos e físicos)
+  - `PINNs` com TensorFlow (modelos físico-informados)
+
+- **IoT e Sensoriamento:**
+  - `ESP32` (coleta de dados)
+  - `MQTT` (protocolo de comunicação leve)
+  - `Node-RED` (ingestão e roteamento de dados simulados)
+
+- **Banco de Dados:**
+  - `PostgreSQL` (armazenamento relacional principal)
+  - `InfluxDB` (séries temporais para variáveis como temperatura e vibração)
+
+- **Infraestrutura em Nuvem:**
+  - `AWS EC2` (hospedagem dos modelos e aplicações)
+  - `AWS RDS` (PostgreSQL gerenciado)
+  - `AWS S3` (armazenamento de logs e simulações)
+
+- **Visualização e Dashboards:**
+  - `Streamlit` (interface interativa)
+  - `Grafana` (monitoramento de métricas em tempo real)
+
+- **Orquestração e Deploy:**
+  - `Apache Airflow` (automação de pipelines)
+  - `Docker` (containerização dos serviços)
+
+## 🧠 Visão sobre a Integração com Modelos de IA
+
+Embora os modelos de Inteligência Artificial ainda não estejam implementados nesta fase, a arquitetura proposta já está **completamente preparada para sua integração futura**, com destaque para:
+
+- **Modelos Preditivos (Supervisionados)**  
+  - Serão desenvolvidos com `Scikit-learn` e `TensorFlow`, utilizando os dados coletados de sensores reais (via MQTT).
+  - O pipeline armazenará e tratará os dados em tempo real, alimentando modelos de regressão e classificação para prever falhas mecânicas, térmicas ou elétricas.
+
+- **IA Generativa (GANs)**  
+  - O sistema prevê a criação de **dados sintéticos realistas** para cenários de falha ainda não observados.
+  - Esses dados alimentarão o Gêmeo Digital Executável para simular condições de estresse extremo, antecipando riscos raros.
+
+- **Reinforcement Learning (RL)**  
+  - Será utilizado para criar um sistema **autônomo adaptativo**, onde a IA aprende a otimizar parâmetros operacionais com base nas consequências de suas decisões.
+  - O uso de `Stable-Baselines3` com feedback direto dos sensores permitirá um laço de autoajuste contínuo.
+
+A separação entre coleta, armazenamento e processamento permite que a IA seja integrada gradualmente sem reestruturar o sistema. O Gêmeo Digital atuará como ponto central da lógica, recebendo previsões, gerando simulações e acionando alertas ou sugestões operacionais com base na inferência dos modelos.
+
+Essa visão garante que, mesmo nesta etapa inicial, a arquitetura já antecipa a adoção de IA de forma estruturada, escalável e funcional.
+
+
+## 🗄️ Justificativa do Uso de Banco de Dados em Nuvem
+
+A arquitetura do projeto foi desenhada para operar de forma **modular, escalável e acessível remotamente**. Por isso, optamos por utilizar uma **estrutura de banco de dados em nuvem**, fundamentada nos seguintes pontos:
+
+- **PostgreSQL** será executado no serviço gerenciado **AWS RDS**, garantindo:
+  - Alta disponibilidade e backup automático;
+  - Escalabilidade vertical conforme o volume de dados crescer;
+  - Redução do esforço com administração de instância (infra como serviço).
+
+- **InfluxDB** será utilizado para dados de séries temporais (vibração, temperatura, corrente) por sua eficiência em gravações contínuas e suporte nativo a métricas industriais. Ele poderá ser hospedado:
+  - Localmente em ambiente Docker no início;
+  - Ou em um serviço dedicado na nuvem (como InfluxDB Cloud) conforme o projeto evoluir.
+
+A escolha pela **nuvem** justifica-se por:
+- **Facilidade de escalonamento horizontal e vertical** em caso de múltiplos sensores ou plantas industriais;
+- Possibilidade de **acesso remoto e multiusuário**, inclusive para dashboards, APIs e IA;
+- Alinhamento com práticas modernas de arquitetura distribuída e integração com outros serviços (ex: AWS Lambda para automação, S3 para arquivos históricos, etc).
+
+Se necessário, a arquitetura poderá ser replicada localmente (on-premises) com as mesmas ferramentas, mas a nuvem traz maior agilidade e menor custo de operação durante as fases iniciais e de testes.
+
+---
+
+## 📡 Estratégia de Coleta de Dados
+
+A coleta de dados será realizada em duas fases: uma fase inicial simulada e uma fase posterior com sensores reais conectados a dispositivos ESP32, utilizando exclusivamente o protocolo **MQTT** para transmissão de dados.
+
+### 🔧 Fase 1 – Dados Simulados
+
+Na primeira fase, o sistema utilizará **scripts em Python** para gerar dados artificiais representando o comportamento de máquinas industriais. Esses dados simulam:
+
+- Aumento progressivo de temperatura;
+- Vibração anormal intermitente;
+- Variações de corrente elétrica;
+- Eventos de falha súbita.
+
+Os dados serão enviados via **MQTT** a um broker local, imitando a comunicação que será feita pelos sensores físicos. Isso permite validar toda a arquitetura de ingestão, processamento e visualização de dados antes da integração com hardware real.
+
+---
+
+### 🏭 Fase 2 – Dados Reais via MQTT com Sensores Industriais
+
+Com a arquitetura validada, os sensores físicos serão conectados ao ESP32 e configurados para transmitir dados por **MQTT** diretamente ao sistema. Abaixo, os sensores selecionados para coleta industrial precisa:
+
+#### **1. Vibração**
+- `ADXL1002` (analógico, leitura via ADC do ESP32)
+- `IIS3DWB` (digital, SPI/I2C via microcontrolador + envio MQTT)
+
+#### **2. Temperatura**
+- `TMP117` (I2C, alta precisão)
+- `PT100 + MAX31865` (SPI + leitura via ADC + envio MQTT)
+
+#### **3. Corrente elétrica**
+- `ACS770` (sensor de efeito Hall, analógico)
+- `INA219` (I2C, leitura de corrente e potência)
+
+#### **4. Pressão**
+- `Honeywell HSC` (I2C, calibrado e digital)
+- `Honeywell MIP` (analógico, saída ratiométrica)
+
+#### **5. Ruído e ultrassom**
+- `SPH0641LU4H-1` (PDM via microcontrolador + processamento local)
+- `ICS-43434` (I²S digital para sons mecânicos audíveis)
+
+---
+
+### 🔄 Comunicação e Armazenamento
+
+- Todos os sensores se comunicam via **ESP32 + MQTT**, enviando mensagens estruturadas (JSON) com timestamp e leitura.
+- O broker MQTT central faz a **ponte para o banco de dados**, armazenando os dados em:
+  - `InfluxDB` para séries temporais contínuas;
+  - `PostgreSQL` para registros de eventos e metadados.
+- O pipeline integra os dados diretamente ao Gêmeo Digital Executável, alimentando os modelos de IA.
+
+---
+
+### 📈 Benefícios dessa abordagem com MQTT
+
+- Comunicação leve, rápida e eficiente, ideal para ambientes industriais com múltiplos sensores;
+- Escalabilidade fácil: novos sensores podem ser adicionados apenas publicando em novos tópicos;
+- Compatibilidade com **broker local (Mosquitto)** ou com serviços em nuvem (ex.: AWS IoT Core, HiveMQ);
+- Baixa latência para aplicações de **monitoramento em tempo real** e integração com dashboards.
+
+---
+
+Essa estratégia garante uma coleta de dados robusta, padronizada e escalável, pronta para alimentar simulações dinâmicas e algoritmos preditivos avançados no contexto do Gêmeo Digital Executável.
+
+## 🗺️ Plano Inicial de Desenvolvimento
+
+A seguir, descrevemos o plano de desenvolvimento inicial do projeto, com foco na Fase 3 do desafio, que consiste na entrega de uma **proposta técnica documentada**, incluindo definição da arquitetura, tecnologias, pipeline de dados e estratégia de coleta.
+
+### 🔄 Etapas do Desenvolvimento (Fase 3)
+
+#### ✅ Estruturação e Base Técnica
+- Criação do repositório privado no GitHub com organização de pastas e estrutura inicial de documentação;
+- Levantamento técnico dos sensores reais e simulados;
+- Definição do protocolo de comunicação padrão (MQTT);
+- Elaboração da primeira versão do pipeline de dados;
+- Início da simulação de sensores em Python com envio via MQTT.
+
+#### ✅ Arquitetura, Estratégia de Coleta e Redação
+- Finalização da arquitetura visual no diagrams.net;
+- Descrição detalhada da estratégia de coleta de dados (fase simulada + sensores reais);
+- Redação da proposta técnica no `README.md`, incluindo justificativa, tecnologias, funcionalidades e divisão de responsabilidades;
+- Ajuste e refinamento final do texto com participação de todos os integrantes.
+
+---
+
+## 👥 Divisão de Responsabilidades entre os Membros
+
+| Integrante               | Responsabilidade Principal                                                                 |
+|--------------------------|---------------------------------------------------------------------------------------------|
+| Nome do integrante 1     | Estruturação do repositório GitHub e documentação base (README, estrutura de pastas)        |
+| Nome do integrante 2     | Desenvolvimento da simulação de sensores e envio dos dados via MQTT                        |
+| Nome do integrante 3     | Levantamento técnico e escolha dos sensores reais compatíveis com ESP32                    |
+| Nome do integrante 4     | Criação da arquitetura visual no diagrams.net e estruturação do pipeline de dados           |
+| Nome do integrante 5     | Redação da proposta técnica (coleta, tecnologias, IA), foco no Gêmeo Digital Executável     |
+
+> A equipe realizará revisões colaborativas ao final de cada etapa para garantir coesão e qualidade técnica na proposta.
+
 
 
 ## 📁 Estrutura de pastas
 
-Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
+- **.github**: Configurações do repositório GitHub.
+- **assets**: Imagens, logos e recursos visuais.
+- **config**: Arquivos de configuração (ex: `requirements.txt`, `.env` etc).
+- **document**: Relatórios, PDFs e documentação técnica.
+- **scripts**: Scripts auxiliares (simulação de sensores, deploy, backups).
+- **src**: Código-fonte (pipelines, modelos, dashboards).
+- **README.md**: Este documento.
 
-- <b>.github</b>: Nesta pasta ficarão os arquivos de configuração específicos do GitHub que ajudam a gerenciar e automatizar processos no repositório.
+---
 
-- <b>assets</b>: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens.
+## 🧱 Arquitetura da Solução
 
-- <b>config</b>: Posicione aqui arquivos de configuração que são usados para definir parâmetros e ajustes do projeto.
+A arquitetura será representada no app gratuito [https://app.diagrams.net](https://app.diagrams.net) e abordará:
 
-- <b>document</b>: aqui estão todos os documentos do projeto que as atividades poderão pedir. Na subpasta "other", adicione documentos complementares e menos importantes.
+- Coleta de dados via sensores ou simulação com ESP32;
+- Armazenamento em banco de dados local ou na nuvem;
+- Processamento por um Gêmeo Digital Executável capaz de realizar simulações e tomar decisões;
+- Análise preditiva e geração de cenários via IA generativa;
+- Ajustes automáticos baseados em autoaprendizado;
+- Visualização com dashboards dinâmicos e relatórios inteligentes.
 
-- <b>scripts</b>: Posicione aqui scripts auxiliares para tarefas específicas do seu projeto. Exemplo: deploy, migrações de banco de dados, backups.
+(🧩 Inserir aqui a imagem ou link do diagrama assim que estiver pronto)
 
-- <b>src</b>: Todo o código fonte criado para o desenvolvimento do projeto ao longo das 7 fases.
+---
 
-- <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
+## 🚀 Como executar o projeto
 
-## 🔧 Como executar o código
+> ⚠️ Nesta etapa não é necessário rodar um sistema funcional. No entanto, deixaremos aqui as instruções para o futuro desenvolvimento.
 
-*Acrescentar as informações necessárias sobre pré-requisitos (IDEs, serviços, bibliotecas etc.) e instalação básica do projeto, descrevendo eventuais versões utilizadas. Colocar um passo a passo de como o leitor pode baixar o seu código e executá-lo a partir de sua máquina ou seu repositório. Considere a explicação organizada em fase.*
+**Pré-requisitos:**
+- Python 3.10+
+- pip ou poetry
+- Conta gratuita AWS ou Google Cloud (opcional)
 
-
-## 🗃 Histórico de lançamentos
-
-* 0.5.0 - XX/XX/2024
-    * 
-* 0.4.0 - XX/XX/2024
-    * 
-* 0.3.0 - XX/XX/2024
-    * 
-* 0.2.0 - XX/XX/2024
-    * 
-* 0.1.0 - XX/XX/2024
-    *
-
-## 📋 Licença
-
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/agodoi/template">MODELO GIT FIAP</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://fiap.com.br">Fiap</a> está licenciado sobre <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
-
-
+**Instalação básica (simulada):**
+```bash
+git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+cd projeto
+pip install -r requirements.txt
