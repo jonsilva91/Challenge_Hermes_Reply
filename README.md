@@ -11,17 +11,17 @@
 ## Nome do grupo
 
 ## 👨‍🎓 Integrantes: 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 1</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 2</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 3</a> 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 4</a> 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 5</a>
+- <a href="https://www.linkedin.com/in/jonas-silva-0a659892/">Jonas Luis da Silva</a>
+- <a href="https://www.linkedin.com/in/renan-francisco-de-paula-b3320915b/overlay/about-this-profile/">Renan Francisco de Paula</a>
+- <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-severo-oliveira-87904134b/">João Vitor Severo Oliveira</a> 
+- <a href="https://www.linkedin.com/in/isagomesferreira/">Isabelle Gomes Ferreira</a> 
+- <a href="https://www.linkedin.com/in/edson-henrique-felix-batista-a00191123/">Edson Henrique Felix Batista</a>
 
 ## 👩‍🏫 Professores:
 ### Tutor(a) 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Tutor</a>
+- <a href="https://www.linkedin.com/company/inova-fusca">Lucas Gomes Moreira</a>
 ### Coordenador(a)
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Coordenador</a>
+- <a href="https://www.linkedin.com/company/inova-fusca">André Godoi Chiovato</a>
 
 ---
 ## 📜 Descrição
@@ -286,11 +286,11 @@ A seguir, descrevemos o plano de desenvolvimento inicial do projeto, com foco na
 
 | Integrante               | Responsabilidade Principal                                                                 |
 |--------------------------|---------------------------------------------------------------------------------------------|
-| Nome do integrante 1     | Estruturação do repositório GitHub e documentação base (README, estrutura de pastas)        |
-| Nome do integrante 2     | Desenvolvimento da simulação de sensores e envio dos dados via MQTT                        |
-| Nome do integrante 3     | Levantamento técnico e escolha dos sensores reais compatíveis com ESP32                    |
-| Nome do integrante 4     | Criação da arquitetura visual no diagrams.net e estruturação do pipeline de dados           |
-| Nome do integrante 5     | Redação da proposta técnica (coleta, tecnologias, IA), foco no Gêmeo Digital Executável     |
+| Jonas Luis da Silva     | Estruturação do repositório GitHub e documentação base (README, estrutura de pastas)        |
+| Renan Francisco de Paula     | Desenvolvimento da simulação de sensores e envio dos dados via MQTT                        |
+| João Vitor Severo Oliveira     | Levantamento técnico e escolha dos sensores reais compatíveis com ESP32                    |
+| Isabelle Gomes Ferreira     | Criação da arquitetura visual no diagrams.net e estruturação do pipeline de dados           |
+| Edson Henrique Felix Batista     | Redação da proposta técnica (coleta, tecnologias, IA), foco no Gêmeo Digital Executável     |
 
 > A equipe realizará revisões colaborativas ao final de cada etapa para garantir coesão e qualidade técnica na proposta.
 
