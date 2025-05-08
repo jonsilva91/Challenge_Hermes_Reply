@@ -334,6 +334,6 @@ A arquitetura será representada no app gratuito [https://app.diagrams.net](http
 
 **Instalação básica (simulada):**
 ```bash
-git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+git clone https://github.com/jonsilva91/Challenge_Hermes_Reply.git
 cd projeto
 pip install -r requirements.txt
