@@ -8,7 +8,7 @@
 
 # PreventAI - Solução Inteligente para Prevenção de Falhas em Linhas de Produção Industrial
 
-## Nome do grupo
+## Equipe rocket
 
 ## 👨‍🎓 Integrantes: 
 - <a href="https://www.linkedin.com/in/jonas-silva-0a659892/">Jonas Luis da Silva</a>
