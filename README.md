@@ -58,6 +58,60 @@ Como diferencial, o sistema integra também um mecanismo de **autonomia proativa
 Essa combinação de **simulação inteligente, aprendizado contínuo e automação adaptativa** representa um avanço significativo na manutenção preditiva industrial, posicionando a solução como uma referência inovadora na Indústria 4.0.
 
 ---
+## 💰 Estimativa de Economia e Impacto Financeiro
+
+A solução PreventAI vai além da detecção de falhas e da otimização de processos: ela é projetada para **gerar impacto financeiro mensurável** em tempo real. Com o uso de um Gêmeo Digital Executável aliado a Inteligência Artificial, o sistema **quantifica de forma contínua os custos evitados**, proporcionando à gestão uma visão clara do retorno obtido com a digitalização e automação industrial.
+
+### 📐 Como o sistema estima a economia gerada
+
+- Para cada anomalia detectada, o sistema aplica **modelos de estimativa baseados em dados históricos e parâmetros industriais** (como custo médio de parada por hora, custo de reparo, tempo médio de recuperação – MTTR);
+- Cada falha antecipada gera um **registro econômico estimado** do que seria perdido caso não houvesse intervenção;
+- O Gêmeo Digital correlaciona o comportamento real da máquina com dados simulados para apontar **oportunidades de ganho operacional oculto**;
+- Indicadores agregados são exibidos em **dashboards gerenciais**, mostrando:
+  - Redução no tempo de inatividade (downtime);
+  - Redução de ordens de manutenção corretiva;
+  - Aumento da disponibilidade de equipamentos (OEE);
+  - Custo evitado acumulado por mês/ano;
+  - ROI estimado da implantação da solução.
+
+---
+
+### 📊 Exemplo de retorno simulado
+
+> Em uma planta com **15 máquinas operando em regime 24/7**, com apenas **5 sensores estratégicos** conectados ao sistema PreventAI, estima-se uma **economia operacional mensal entre R$ 18.500,00 e R$ 32.000,00**, considerando:
+> - Prevenção de 3 falhas críticas por mês;
+> - Redução de 14h/mês de inatividade;
+> - Reposicionamento inteligente de ciclos de manutenção.
+
+---
+
+### 🧾 Geração de Relatórios Econômicos
+
+O sistema fornece relatórios com análises automatizadas e baseadas em evidências, como:
+
+- **Resumo financeiro mensal das ações preventivas automatizadas**;
+- **Comparativo de custo estimado x custo real de manutenção**;
+- **Relatório de ROI e Payback** com base nos sensores ativos e falhas evitadas.
+
+Esses dados podem ser integrados com plataformas como:
+
+- `Power BI` (painéis financeiros interativos);
+- `Tableau` (para visualizações estratégicas corporativas);
+- `Grafana + InfluxDB` (para análise de séries temporais com foco em OEE e disponibilidade);
+- Integração com `ERP` ou `MES` para registro contábil automatizado do impacto financeiro.
+
+---
+
+### 🎯 Benefícios para a gestão
+
+- **Visibilidade em tempo real dos ganhos financeiros obtidos pela IA**;
+- Projeções de ROI e Payback com base em dados operacionais concretos;
+- Relatórios automatizados que auxiliam na **prestação de contas para diretoria e investidores**;
+- Apoio à **tomada de decisão baseada em valor gerado**, e não apenas em performance técnica.
+
+---
+
+Essa abordagem transforma o PreventAI em uma ferramenta **técnica, estratégica e financeira**, capacitando a indústria a justificar seus investimentos em inovação com base em métricas concretas de valor gerado.
 
 ## 🧰 Tecnologias Utilizadas
 
