@@ -1,7 +1,7 @@
 # FIAP - Faculdade de Informática e Administração Paulista 
 
 <p align="center">
-<a href= "https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Admnistração Paulista" border="0" width=40% height=40%></a>
+<a href= "https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Adimnistração Paulista" border="0" width=40% height=40%></a>
 </p>
 
 <br>
@@ -290,7 +290,7 @@ A seguir, descrevemos o plano de desenvolvimento inicial do projeto, com foco na
 | Renan Francisco de Paula     | Desenvolvimento da simulação de sensores e envio dos dados via MQTT                        |
 | João Vitor Severo Oliveira     | Levantamento técnico e escolha dos sensores reais compatíveis com ESP32                    |
 | Isabelle Gomes Ferreira     | Criação da arquitetura visual no diagrams.net e estruturação do pipeline de dados           |
-| Edson Henrique Felix Batista     | Redação da proposta técnica (coleta, tecnologias, IA), foco no Gêmeo Digital Executável     |
+| Edson Henrique Felix Batista     | Responsável pela redação técnica da proposta, com foco em coleta de dados, tecnologias empregadas e o Gêmeo Digital Executável     |
 
 > A equipe realizará revisões colaborativas ao final de cada etapa para garantir coesão e qualidade técnica na proposta.
 
