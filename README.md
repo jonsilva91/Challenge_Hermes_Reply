@@ -320,7 +320,7 @@ A arquitetura será representada no app gratuito [https://app.diagrams.net](http
 - Visualização com dashboards dinâmicos e relatórios inteligentes.
 
 
-![Diagrama de Arquitetura](document/arquitetura.png)
+![Diagrama de Arquitetura](document/arquitetura.PNG)
 
 ---
 
