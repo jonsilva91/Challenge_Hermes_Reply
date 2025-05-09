@@ -144,7 +144,7 @@ Essa abordagem transforma o PreventAI em uma ferramenta **técnica, estratégica
 - **Infraestrutura em Nuvem:**
   - `AWS EC2` (hospedagem dos modelos e aplicações)
   - `AWS RDS` (PostgreSQL gerenciado)
-  - `AWS S3` (armazenamento de logs e simulações)
+  - `DynamoDB` (armazenamento de logs e simulações)
 
 - **Visualização e Dashboards:**
   - `Streamlit` (interface interativa)
@@ -191,7 +191,7 @@ A arquitetura do projeto foi desenhada para operar de forma **modular, escaláve
 A escolha pela **nuvem** justifica-se por:
 - **Facilidade de escalonamento horizontal e vertical** em caso de múltiplos sensores ou plantas industriais;
 - Possibilidade de **acesso remoto e multiusuário**, inclusive para dashboards, APIs e IA;
-- Alinhamento com práticas modernas de arquitetura distribuída e integração com outros serviços (ex: AWS Lambda para automação, S3 para arquivos históricos, etc).
+- Alinhamento com práticas modernas de arquitetura distribuída e integração com outros serviços (ex: AWS Lambda para automação, DynamoDB para arquivos históricos, etc).
 
 Se necessário, a arquitetura poderá ser replicada localmente (on-premises) com as mesmas ferramentas, mas a nuvem traz maior agilidade e menor custo de operação durante as fases iniciais e de testes.
 
@@ -319,7 +319,8 @@ A arquitetura será representada no app gratuito [https://app.diagrams.net](http
 - Ajustes automáticos baseados em autoaprendizado;
 - Visualização com dashboards dinâmicos e relatórios inteligentes.
 
-(🧩 Inserir aqui a imagem ou link do diagrama assim que estiver pronto)
+
+![Diagrama de Arquitetura](document/arquitetura.png)
 
 ---
 
