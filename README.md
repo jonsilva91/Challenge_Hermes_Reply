@@ -246,7 +246,7 @@ Essa implementação possibilita validar a integração de múltiplos sensores e
 
 #### 🔧 Sensores Reais com Publicação MQTT
 
-O segundo programa, implementado localmente via **PlatformIO/VScode**, utiliza sensores industriais reais conectados ao **ESP32**:
+O segundo programa, implementado localmente via **PlatformIO/VScode**, utiliza sensores industriais reais conectados ao **ESP32**, sendo essa versão um template para fases futuras:
 
 - `ADXL1002` (vibração – analógico)
 - `ACS770` (corrente elétrica – analógico)
@@ -270,7 +270,7 @@ Os dados são publicados em tempo real em um **broker MQTT**, com o tópico `ind
   "pressure_mip": 85.2
 }
 ```
-Ambos os programas (simulado e real) estão organizados na pasta `/src/esp32`:
+Ambos os programas (simulado e template) estão organizados na pasta `/src/esp32`:
 
 ```bash
 /src
