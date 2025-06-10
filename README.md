@@ -197,20 +197,104 @@ Se necessário, a arquitetura poderá ser replicada localmente (on-premises) com
 
 ---
 
-## 📡 Estratégia de Coleta de Dados
+## Estratégia de Coleta de Dados
 
-A coleta de dados será realizada em duas fases: uma fase inicial simulada e uma fase posterior com sensores reais conectados a dispositivos ESP32, utilizando exclusivamente o protocolo **MQTT** para transmissão de dados.
+A coleta de dados será realizada em duas fases: uma fase inicial simulada e uma fase posterior com sensores reais conectados a dispositivos ESP32.
 
-### 🔧 Fase 1 – Dados Simulados
+### 🔧 Fase 1 – Implementação Simulada com ESP32
 
-Na primeira fase, o sistema utilizará **scripts em Python** para gerar dados artificiais representando o comportamento de máquinas industriais. Esses dados simulam:
+Nesta fase, utilizamos dois programas baseados em ESP32:
 
-- Aumento progressivo de temperatura;
-- Vibração anormal intermitente;
-- Variações de corrente elétrica;
-- Eventos de falha súbita.
+#### 🔌 **Simulação via Wokwi com Sensores Virtuais**
 
-Os dados serão enviados via **MQTT** a um broker local, imitando a comunicação que será feita pelos sensores físicos. Isso permite validar toda a arquitetura de ingestão, processamento e visualização de dados antes da integração com hardware real.
+O primeiro programa foi implementado em ambiente simulado (Wokwi) com sensores representados por potenciômetros, permitindo gerar valores artificiais que representam:
+
+- **Vibração (g)** simulada via potenciômetro no pino 34;
+- **Corrente elétrica (A)** simulada no pino 35;
+- **Pressão (psi)** via pino 32;
+- **Temperatura (°C)** lida de um `DS18B20` via barramento OneWire;
+- **Aceleração (eixo X)** de um `MPU6050` via I²C.
+
+Esses dados são:
+
+- Convertidos em JSON usando `ArduinoJson`;
+- Exibidos em um display LCD 20x4 via I²C;
+- Impressos na serial do ESP32 em formato estruturado.
+
+```cpp
+// Exemplo de trecho relevante:
+StaticJsonDocument<256> doc;
+doc["vibration_g"]  = vib_g;
+doc["current_A"]    = cur_A;
+doc["pressure_psi"] = press;
+doc["temp_C"]       = tempC;
+doc["accel_x"]      = accelX;
+
+String json;
+serializeJson(doc, json);
+Serial.println(json);
+
+```
+Circuito montado no Wokwi:
+![Circuito Montado](assets/circuito.png)
+
+
+Essa implementação possibilita validar a integração de múltiplos sensores e o formato de exportação dos dados, com interface amigável via display.
+
+---
+
+
+#### 🔧 Sensores Reais com Publicação MQTT
+
+O segundo programa, implementado localmente via **PlatformIO/VScode**, utiliza sensores industriais reais conectados ao **ESP32**:
+
+- `ADXL1002` (vibração – analógico)
+- `ACS770` (corrente elétrica – analógico)
+- `Honeywell MIP` (pressão – analógico)
+- `TMP117` (temperatura – I2C)
+- `PT100 + MAX31865` (temperatura – SPI)
+- `INA219` (corrente e tensão – I2C)
+
+Os dados são publicados em tempo real em um **broker MQTT**, com o tópico `industrial/sensors`, no seguinte formato:
+
+```json
+{
+  "vibration_g": 1.14,
+  "accel_digital": 0.00,
+  "temp_i2c": 24.7,
+  "temp_pt100": 24.3,
+  "current_A": 2.5,
+  "bus_V": 12.1,
+  "shunt_V": 0.03,
+  "current_mA": 150.4,
+  "pressure_mip": 85.2
+}
+```
+Ambos os programas (simulado e real) estão organizados na pasta `/src/esp32`:
+
+```bash
+/src
+  └── esp32
+      ├── simulado/   → versão para Wokwi com potenciômetros e LCD
+      └── src/   → versão com sensores reais + MQTT
+
+```
+#### 📈 Visualização em Gráfico
+
+Os dados simulados **não foram exportados diretamente do Wokwi** devido à limitação da conta gratuita. No entanto, foi utilizado um **dataset com 10.000 linhas** que será aproveitado para o **treinamento de modelos de Machine Learning nas fases futuras**.
+
+Nesta etapa, esse dataset será utilizado para **análises estatísticas e geração de gráficos exploratórios**, permitindo extrair **insights relevantes** a partir de dados simulados com comportamento realista.
+
+**📂 Dataset utilizado:** `document/predictive_maintenance.csv`
+
+---
+
+#### ✅ Objetivos desta fase:
+
+- Validar a estrutura de coleta de dados;
+- Compreender a montagem do JSON em ambiente embarcado;
+- Garantir exibição local e exportabilidade dos dados via Serial;
+- Preparar o código e a estrutura do projeto para a **Fase 2**, com sensores reais + MQTT.
 
 ---
 
