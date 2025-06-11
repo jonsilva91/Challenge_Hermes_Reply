@@ -287,6 +287,10 @@ Nesta etapa, esse dataset será utilizado para **análises estatísticas e gera�
 
 **📂 Dataset utilizado:** `document/predictive_maintenance.csv`
 
+A análise a seguir detalha cinco indicadores-chave de desempenho (KPIs) de um processo de manufatura, visualizados através de gráficos. O objetivo é extrair insights sobre a saúde operacional, a eficiência e a qualidade da produção, utilizando dados de sensores e métricas de desempenho para guiar decisões estratégicas.
+
+**📂 Notebook dos gráficos:** `document/VisualizacaoemGrafico.ipynb`
+
 ---
 
 #### ✅ Objetivos desta fase:
