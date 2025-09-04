@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="TIPO_SENSOR" directorySegmentName="seg_0" id="7B475246-88DA-B3BC-5B43-E4F83B0129F1">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="vl_min" id="1D405B65-48FB-07DB-49DB-F31C2F7B30CF">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ds_tipo" id="4CA1606B-9F02-477C-02CE-0D49FF4F65F4">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="vl_max" id="598D0E45-BCAC-DC04-E853-EF242C380113">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="cd_tipo_sensor" id="64D402FB-3961-5D86-BC3E-B57E5CFBEC07">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="unidade" id="78D5D911-00EF-3412-68B7-34B80837509E">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="TIPO_SENSOR_PK" id="ABFBCB19-1025-81E2-B932-4AFB69B98527">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

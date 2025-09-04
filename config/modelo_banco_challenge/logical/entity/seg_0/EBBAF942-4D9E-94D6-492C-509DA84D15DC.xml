@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EBBAF942-4D9E-94D6-492C-509DA84D15DC" name="TOPICO MQTT">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>E4C1FF87-B8D4-1908-BE7C-49C8EC24DA64</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd topico" id="57A29942-9D81-F0E6-D901-095FFCDB46FE">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>1F7BF736-79EE-6FC9-4DD7-FECD68D26733</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>52AD4D73-50EC-37E5-D82B-A41AEBDDDDAA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm topico" id="E62A5FB9-D624-1076-B8CC-FF582C09316D">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>21F7559F-EF92-5331-B308-15DC38A07C2E</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BE0448B8-A714-65F5-197A-7A758E146FAC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds schema" id="A444067C-BC1D-73CE-F385-EAE40ACF733B">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>60173E63-085D-0C99-DC9A-58CE1FA400F5</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>F724574C-80BD-EFD7-693D-3260ED534F61</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="75CB3188-1B0C-C6EB-221B-0CDE16794A48" name="TOPICO MQTT PK">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>044BE80C-D78D-BAB8-F9F9-1AAB37B3C686</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>57A29942-9D81-F0E6-D901-095FFCDB46FE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

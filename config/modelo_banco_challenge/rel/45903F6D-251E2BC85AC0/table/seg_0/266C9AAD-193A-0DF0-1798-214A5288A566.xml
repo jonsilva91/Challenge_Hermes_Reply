@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="266C9AAD-193A-0DF0-1798-214A5288A566" name="ALERTA">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>FEC7D04F-4E9C-6CE6-1F0F-6216197184AC</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_alerta" id="70D1EBA6-D721-34A2-3323-D43EB2FFBD84">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>27270BDD-809B-534C-7EBC-DC90AEA3A5D7</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>52AD4D73-50EC-37E5-D82B-A41AEBDDDDAA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tp_alerta" id="7D4492D5-6BC3-E524-59D4-85377C148562">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>9C843DAB-DB92-D5AA-D9FB-49A61AF210F2</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E2FC4818-8A6A-59E7-8B0D-058C5E4F0E4B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_alerta" id="51046CBA-DBB5-23E7-A9A7-131F509C2284">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>488721A9-983D-7586-7924-D8C9D05234BD</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>F724574C-80BD-EFD7-693D-3260ED534F61</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="st_alerta" id="6059B922-AA2F-8FF3-D4F5-DAC070D1EDF1">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>7B1FE190-15F4-0C4D-5203-424DB001757D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>D2E03B27-6F8B-CBC5-2347-B269382616E4</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prioridade" id="43ED1CF5-4888-5488-F814-5808162D79B1">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>A8476117-0F3C-1F72-D67C-1438E4BEA359</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>52AD4D73-50EC-37E5-D82B-A41AEBDDDDAA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ts_emissao" id="6193C9F9-5C75-F271-67D4-AF4D6C2B532E">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>10012DCE-D55A-4CE9-7B7B-CC6DA5D2557F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>DD965B78-9036-909A-9A58-2D41EC0AD67C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cd_anomalia" id="21071536-4FD9-50FA-E6C6-BBCB7D427CFE">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>0788F2AF-46F1-B6BC-5EA6-C502B774FFF0</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>52AD4D73-50EC-37E5-D82B-A41AEBDDDDAA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C97F93DB-C34A-F19D-F80E-22009FDC1B04" referredColumn="47FE8D8C-13DD-0DC1-DBE8-36186F35C3A6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="10FB8131-89C5-3CA7-70EF-413E4278BEF2" name="ALERTA_PK">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>D713430F-FC73-0586-63D2-C8478EE810E6</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="70D1EBA6-D721-34A2-3323-D43EB2FFBD84"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0F76878E-F230-BDE2-9FB0-B4E8DB0FD570" name="fk_alerta_anomalia">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21071536-4FD9-50FA-E6C6-BBCB7D427CFE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

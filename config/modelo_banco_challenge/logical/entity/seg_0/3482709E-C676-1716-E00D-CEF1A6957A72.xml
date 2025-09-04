@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3482709E-C676-1716-E00D-CEF1A6957A72" name="ALERTA">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>266C9AAD-193A-0DF0-1798-214A5288A566</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd alerta" id="C71E6453-D4DA-BBD2-3DD4-9135725045D5">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>70D1EBA6-D721-34A2-3323-D43EB2FFBD84</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>52AD4D73-50EC-37E5-D82B-A41AEBDDDDAA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tp alerta" id="DE85E522-E97C-5570-233B-2CEF8CF46677">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>7D4492D5-6BC3-E524-59D4-85377C148562</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E2FC4818-8A6A-59E7-8B0D-058C5E4F0E4B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds alerta" id="E7B4EED6-954D-5320-659E-D6514BFC1EF2">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>51046CBA-DBB5-23E7-A9A7-131F509C2284</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>F724574C-80BD-EFD7-693D-3260ED534F61</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="st alerta" id="D090D755-68DB-D1D5-D1B4-1EDFBDCE4D8C">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>6059B922-AA2F-8FF3-D4F5-DAC070D1EDF1</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>D2E03B27-6F8B-CBC5-2347-B269382616E4</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prioridade" id="0BBF79CB-44D2-865A-48E6-2BBDCD8AA40C">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>43ED1CF5-4888-5488-F814-5808162D79B1</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>52AD4D73-50EC-37E5-D82B-A41AEBDDDDAA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ts emissao" id="742E9227-137B-A695-3095-2EFDF13250B0">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>6193C9F9-5C75-F271-67D4-AF4D6C2B532E</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>DD965B78-9036-909A-9A58-2D41EC0AD67C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd anomalia" id="40885B34-C388-9CFB-FCF8-7832D81E0BDD">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>3C0ECC31-D4E0-B98B-4BCA-8A71FB95EE8D</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<referedAttribute>47990C09-5B53-635C-EE59-A433B917750A</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>52AD4D73-50EC-37E5-D82B-A41AEBDDDDAA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E71308BC-5112-5917-DA5D-5294711816E3" name="ALERTA PK">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>10FB8131-89C5-3CA7-70EF-413E4278BEF2</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C71E6453-D4DA-BBD2-3DD4-9135725045D5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

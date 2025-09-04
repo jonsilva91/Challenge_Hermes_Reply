@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4FAE050D-D7D5-556C-C46E-05B0E04820AE" name="GEMEO_DIGITAL_MODELO">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>2EF33DBB-A83D-B798-AB94-5AF50596953F</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cd_modelo" id="A1E2C1BA-E79B-38E9-0B78-DDB3A3118A9A">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>82BC09A2-193E-5401-A6A2-4AF6E76D4A4B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>52AD4D73-50EC-37E5-D82B-A41AEBDDDDAA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="versao" id="29708D8F-13B3-0665-857C-F0C5E908E201">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>E9C2931F-5B1D-2B09-6C51-26E3F6D5282F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>D2E03B27-6F8B-CBC5-2347-B269382616E4</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tp_modelo" id="AD66A600-8633-9BAE-EC64-84FDC214E15E">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>E7B56371-5D1F-5350-D34A-DDA48C023C29</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E2FC4818-8A6A-59E7-8B0D-058C5E4F0E4B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ds_hiperparam" id="850B699F-95CA-C745-0693-133E23FCAA74">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>48494431-130B-FE15-20AB-75161C5B2225</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>F724574C-80BD-EFD7-693D-3260ED534F61</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4949875D-A5DF-A8DF-2977-E278C41810C7" name="GEMEO_DIGITAL_MODELO_PK">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>C8534C22-6FC6-C742-3603-B99F9779C5DC</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A1E2C1BA-E79B-38E9-0B78-DDB3A3118A9A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

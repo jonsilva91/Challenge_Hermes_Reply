@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="32DDDE4B-8CDA-D5FF-64FA-5C1A6216718C" name="MAQUINA">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>8C7E2DB6-C010-E3C2-10FE-33CAE6FD5B59</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd maquina" id="63CF34F0-FFDD-325C-3226-788C58860901">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>C843BEC8-A25D-A208-0EAB-7D552B7BA9BE</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>52AD4D73-50EC-37E5-D82B-A41AEBDDDDAA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm maquina" id="24D1A7BD-8A73-FC4B-76CB-517A8DE8E9A5">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>7A9C97A6-D5B1-969F-34D1-F0AAE8DF2E2C</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BE0448B8-A714-65F5-197A-7A758E146FAC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tp maquina" id="8B6EF617-1401-E8DA-728A-316CC251085B">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>3E771103-C176-EF5B-8360-D67667C13742</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E2FC4818-8A6A-59E7-8B0D-058C5E4F0E4B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm fabricante" id="3E8C622C-3C8C-14F9-3C52-7CE29892E7BE">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>BFAC05C1-E3E9-15E9-9784-E6A503D3D418</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BE0448B8-A714-65F5-197A-7A758E146FAC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm modelo" id="B8F5748B-A5C2-2229-90BD-23FFAC6C5D06">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>8F83AA05-1CD3-71A8-70F7-41F92EDE425A</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>BE0448B8-A714-65F5-197A-7A758E146FAC</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd linha" id="BCEB039B-91FD-E71F-BFDC-EE3BCB870310">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>F31F6BD2-3043-7EBA-22B1-431C88D5B574</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<referedAttribute>CA0C769A-9F32-15DD-9418-7D7B4728F4AE</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>52AD4D73-50EC-37E5-D82B-A41AEBDDDDAA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2A4DA5DD-7729-A7A4-3BAF-2462A5B35D59" name="MAQUINA PK">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>0163ECEB-B3D4-70CD-EF7B-6B718833328A</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>63CF34F0-FFDD-325C-3226-788C58860901</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

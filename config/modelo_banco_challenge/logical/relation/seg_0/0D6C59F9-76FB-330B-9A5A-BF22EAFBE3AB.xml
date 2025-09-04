@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_leitura_sensor" directorySegmentName="seg_0" id="0D6C59F9-76FB-330B-9A5A-BF22EAFBE3AB">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>B40E778B-B828-E3BD-155A-BE3FF25EBCA3</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<sourcePk>458207F5-1F18-EAC9-EBB6-7ECF049BEC4A</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>78AB0EF7-A7E8-200E-10C5-F219B24A2875</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>3E641274-19DF-EB8E-5C54-9A61B9465190</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

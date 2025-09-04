@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_sensor_tipo" directorySegmentName="seg_0" id="CADACC71-42C4-C682-D01B-5E1E0A0C2AFC">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>BBC8ECF7-965C-2C91-3C03-CB2441E887B4</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<sourcePk>788824D1-DEDA-DDE5-E7DB-B81A91B148EE</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>41A30859-53CE-EF54-2DAC-8C63E2395C7C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>78AB0EF7-A7E8-200E-10C5-F219B24A2875</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

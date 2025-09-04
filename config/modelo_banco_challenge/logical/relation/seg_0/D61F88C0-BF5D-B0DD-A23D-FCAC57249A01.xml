@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_gam_user" directorySegmentName="seg_0" id="D61F88C0-BF5D-B0DD-A23D-FCAC57249A01">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>BFFC302C-FF74-5FC5-DA55-0FADE98789A6</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<sourcePk>EDC8D4BC-1874-9385-59E1-CF3743EA77C5</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1EB8E601-5518-080C-9773-DD501B1F532B</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5E4CDC07-58DF-F2C4-EDC7-0347AE48B8E8</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

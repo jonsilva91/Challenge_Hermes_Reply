@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9C0EB64B-AC7A-8B7A-7F87-001B266A62A9" containerWithKeyObject="795865F2-5696-6AFA-BBF1-6D34E03DE311" localFKIndex="3E28B631-6E4C-ECF6-1321-BA3AAED2BAC8" name="fk_acao_os">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>72F34079-AB0D-F59A-3C19-3DBB139DC659</importedID>
+<referredTableLongName>ORDEM_MANUTENCAO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E9B78EC6-C20D-CA9C-247D-1B6EE80293B3</referredTableID>
+<keyObject>0615346E-6E37-1A34-E384-CCAAC9598E99</keyObject>
+<referredKeyID>0615346E-6E37-1A34-E384-CCAAC9598E99</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_os</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

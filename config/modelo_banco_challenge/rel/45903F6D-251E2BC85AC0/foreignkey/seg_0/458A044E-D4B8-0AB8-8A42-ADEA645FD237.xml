@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="458A044E-D4B8-0AB8-8A42-ADEA645FD237" containerWithKeyObject="1A185FB0-276B-CD08-92F1-17CDAC3F1B29" localFKIndex="10E28CAC-E6B1-E828-323B-5FC03951290C" name="fk_politica_modelo">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>64799EBA-6251-225A-DC78-F0F72D5C92EC</importedID>
+<referredTableLongName>GEMEO_DIGITAL_MODELO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4FAE050D-D7D5-556C-C46E-05B0E04820AE</referredTableID>
+<keyObject>4949875D-A5DF-A8DF-2977-E278C41810C7</keyObject>
+<referredKeyID>4949875D-A5DF-A8DF-2977-E278C41810C7</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_modelo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E8DAFF60-EE46-9E95-E021-20017779D860" containerWithKeyObject="2F070DC0-4C4B-5AE1-E2A4-4EC3E30FE064" localFKIndex="CF4A1BA2-DBBB-DB3C-881A-56E87DD0C5BE" name="fk_treino_dataset">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>A58B9B8A-A506-FF1B-923F-46F832FDFF2C</importedID>
+<referredTableLongName>DATASET</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F36986D1-6960-FBDE-5E6E-AF72C0FA8AAE</referredTableID>
+<keyObject>9DD709F9-AE75-7B11-485B-B6E0809A7C06</keyObject>
+<referredKeyID>9DD709F9-AE75-7B11-485B-B6E0809A7C06</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_dataset</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

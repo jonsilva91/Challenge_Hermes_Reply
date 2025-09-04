@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modelo_banco_challenge" id="F2E6CF65-4A3E-B4A0-08F7-91AB338BE33C" version="3.5">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 21:10:38 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>F2E6CF65-4A3E-B4A0-08F7-91AB338BE33C</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="C0318C50-A064-9B10-3A89-30B42F74ED74">
+<designStoragePath>C:\preventAI</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F8E02F90-1453-7543-9DB4-66B2190C01E4" containerWithKeyObject="E9B78EC6-C20D-CA9C-247D-1B6EE80293B3" localFKIndex="37EF4D09-872E-7E42-0B12-E070B27D8F29" name="fk_os_maquina">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>498C625E-05CE-8B64-2E3D-F731B43D422C</importedID>
+<referredTableLongName>MAQUINA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>8C7E2DB6-C010-E3C2-10FE-33CAE6FD5B59</referredTableID>
+<keyObject>0163ECEB-B3D4-70CD-EF7B-6B718833328A</keyObject>
+<referredKeyID>0163ECEB-B3D4-70CD-EF7B-6B718833328A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_maquina</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

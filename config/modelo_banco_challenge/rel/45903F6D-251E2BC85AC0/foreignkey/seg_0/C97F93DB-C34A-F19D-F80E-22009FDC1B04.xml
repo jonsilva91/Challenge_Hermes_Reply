@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C97F93DB-C34A-F19D-F80E-22009FDC1B04" containerWithKeyObject="266C9AAD-193A-0DF0-1798-214A5288A566" localFKIndex="0F76878E-F230-BDE2-9FB0-B4E8DB0FD570" name="fk_alerta_anomalia">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>83DF3321-374F-E660-8850-DC3A5C9BD19A</importedID>
+<referredTableLongName>ANOMALIA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>14A2FD24-50E6-7122-96DF-E1EF44878A42</referredTableID>
+<keyObject>676A3045-6123-D969-7EB0-91A4F1105E4B</keyObject>
+<referredKeyID>676A3045-6123-D969-7EB0-91A4F1105E4B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_anomalia</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
