@@ -1,4 +1,4 @@
-# FIAP - Faculdade de Informática e Administração Paulista 
+# FIAP - Faculdade de Informática e Administração Paulista
 
 <p align="center">
 <a href= "https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Administração Paulista" border="0" width=40% height=40%></a>
@@ -10,20 +10,26 @@
 
 ## Equipe rocket
 
-## 👨‍🎓 Integrantes: 
+## 👨‍🎓 Integrantes:
+
 - <a href="https://www.linkedin.com/in/jonas-silva-0a659892/">Jonas Luis da Silva</a>
 - <a href="https://www.linkedin.com/in/renan-francisco-de-paula-b3320915b/overlay/about-this-profile/">Renan Francisco de Paula</a>
-- <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-severo-oliveira-87904134b/">João Vitor Severo Oliveira</a> 
-- <a href="https://www.linkedin.com/in/isagomesferreira/">Isabelle Gomes Ferreira</a> 
+- <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-severo-oliveira-87904134b/">João Vitor Severo Oliveira</a>
+- <a href="https://www.linkedin.com/in/isagomesferreira/">Isabelle Gomes Ferreira</a>
 - <a href="https://www.linkedin.com/in/edson-henrique-felix-batista-a00191123/">Edson Henrique Felix Batista</a>
 
 ## 👩‍🏫 Professores:
-### Tutor(a) 
+
+### Tutor(a)
+
 - <a href="https://www.linkedin.com/company/inova-fusca">Lucas Gomes Moreira</a>
+
 ### Coordenador(a)
+
 - <a href="https://www.linkedin.com/company/inova-fusca">André Godoi Chiovato</a>
 
 ---
+
 ## 📜 Descrição
 
 Este projeto é uma proposta de solução para o desafio lançado pela **Hermes Reply**, empresa especializada em soluções digitais industriais. O objetivo é desenvolver uma solução capaz de **prevenir falhas em linhas de produção** por meio da aplicação de **Inteligência Artificial, IoT, Simulação Avançada e Gêmeos Digitais Executáveis**, promovendo eficiência, segurança e continuidade operacional.
@@ -58,6 +64,7 @@ Como diferencial, o sistema integra também um mecanismo de **autonomia proativa
 Essa combinação de **simulação inteligente, aprendizado contínuo e automação adaptativa** representa um avanço significativo na manutenção preditiva industrial, posicionando a solução como uma referência inovadora na Indústria 4.0.
 
 ---
+
 ## 💰 Estimativa de Economia e Impacto Financeiro
 
 A solução PreventAI vai além da detecção de falhas e da otimização de processos: ela é projetada para **gerar impacto financeiro mensurável** em tempo real. Com o uso de um Gêmeo Digital Executável aliado a Inteligência Artificial, o sistema **quantifica de forma contínua os custos evitados**, proporcionando à gestão uma visão clara do retorno obtido com a digitalização e automação industrial.
@@ -79,6 +86,7 @@ A solução PreventAI vai além da detecção de falhas e da otimização de pro
 ### 📊 Exemplo de retorno simulado
 
 > Em uma planta com **15 máquinas operando em regime 24/7**, com apenas **5 sensores estratégicos** conectados ao sistema PreventAI, estima-se uma **economia operacional mensal entre R$ 18.500,00 e R$ 32.000,00**, considerando:
+>
 > - Prevenção de 3 falhas críticas por mês;
 > - Redução de 14h/mês de inatividade;
 > - Reposicionamento inteligente de ciclos de manutenção.
@@ -116,37 +124,45 @@ Essa abordagem transforma o PreventAI em uma ferramenta **técnica, estratégica
 ## 🧰 Tecnologias Utilizadas
 
 - **Linguagens:**
+
   - `Python 3.10` (linguagem principal para processamento, IA e simulação)
   - `R` (análises estatísticas exploratórias e suporte a relatórios)
 
 - **Bibliotecas para análise e aprendizado de máquina (Python):**
+
   - `Pandas` (manipulação de dados)
   - `Scikit-learn` (modelos preditivos e validação)
   - `TensorFlow` + `Keras` (modelagem de deep learning e autoaprendizado)
   - `Stable-Baselines3` (aprendizado por reforço - RL)
 
 - **IA Generativa:**
+
   - `GANs` (para geração de dados sintéticos e simulações de falhas inéditas)
 
 - **Simulação Física e Modelagem:**
+
   - `SciPy` (cálculos numéricos e físicos)
   - `PINNs` com TensorFlow (modelos físico-informados)
 
 - **IoT e Sensoriamento:**
+
   - `ESP32` (coleta de dados)
   - `MQTT` (protocolo de comunicação leve)
   - `Node-RED` (ingestão e roteamento de dados simulados)
 
 - **Banco de Dados:**
+
   - `PostgreSQL` (armazenamento relacional principal)
   - `InfluxDB` (séries temporais para variáveis como temperatura e vibração)
 
 - **Infraestrutura em Nuvem:**
+
   - `AWS EC2` (hospedagem dos modelos e aplicações)
   - `AWS RDS` (PostgreSQL gerenciado)
-  - `DynamoDB` (armazenamento de logs e simulações)
+  - `AWS S3` (armazenamento de logs e simulações)
 
 - **Visualização e Dashboards:**
+
   - `Streamlit` (interface interativa)
   - `Grafana` (monitoramento de métricas em tempo real)
 
@@ -158,15 +174,17 @@ Essa abordagem transforma o PreventAI em uma ferramenta **técnica, estratégica
 
 Embora os modelos de Inteligência Artificial ainda não estejam implementados nesta fase, a arquitetura proposta já está **completamente preparada para sua integração futura**, com destaque para:
 
-- **Modelos Preditivos (Supervisionados)**  
+- **Modelos Preditivos (Supervisionados)**
+
   - Serão desenvolvidos com `Scikit-learn` e `TensorFlow`, utilizando os dados coletados de sensores reais (via MQTT).
   - O pipeline armazenará e tratará os dados em tempo real, alimentando modelos de regressão e classificação para prever falhas mecânicas, térmicas ou elétricas.
 
-- **IA Generativa (GANs)**  
+- **IA Generativa (GANs)**
+
   - O sistema prevê a criação de **dados sintéticos realistas** para cenários de falha ainda não observados.
   - Esses dados alimentarão o Gêmeo Digital Executável para simular condições de estresse extremo, antecipando riscos raros.
 
-- **Reinforcement Learning (RL)**  
+- **Reinforcement Learning (RL)**
   - Será utilizado para criar um sistema **autônomo adaptativo**, onde a IA aprende a otimizar parâmetros operacionais com base nas consequências de suas decisões.
   - O uso de `Stable-Baselines3` com feedback direto dos sensores permitirá um laço de autoajuste contínuo.
 
@@ -174,12 +192,12 @@ A separação entre coleta, armazenamento e processamento permite que a IA seja 
 
 Essa visão garante que, mesmo nesta etapa inicial, a arquitetura já antecipa a adoção de IA de forma estruturada, escalável e funcional.
 
-
 ## 🗄️ Justificativa do Uso de Banco de Dados em Nuvem
 
 A arquitetura do projeto foi desenhada para operar de forma **modular, escalável e acessível remotamente**. Por isso, optamos por utilizar uma **estrutura de banco de dados em nuvem**, fundamentada nos seguintes pontos:
 
 - **PostgreSQL** será executado no serviço gerenciado **AWS RDS**, garantindo:
+
   - Alta disponibilidade e backup automático;
   - Escalabilidade vertical conforme o volume de dados crescer;
   - Redução do esforço com administração de instância (infra como serviço).
@@ -189,11 +207,153 @@ A arquitetura do projeto foi desenhada para operar de forma **modular, escaláve
   - Ou em um serviço dedicado na nuvem (como InfluxDB Cloud) conforme o projeto evoluir.
 
 A escolha pela **nuvem** justifica-se por:
+
 - **Facilidade de escalonamento horizontal e vertical** em caso de múltiplos sensores ou plantas industriais;
 - Possibilidade de **acesso remoto e multiusuário**, inclusive para dashboards, APIs e IA;
-- Alinhamento com práticas modernas de arquitetura distribuída e integração com outros serviços (ex: AWS Lambda para automação, DynamoDB para arquivos históricos, etc).
+- Alinhamento com práticas modernas de arquitetura distribuída e integração com outros serviços (ex: AWS Lambda para automação, AWS S3 para arquivos históricos, etc).
 
 Se necessário, a arquitetura poderá ser replicada localmente (on-premises) com as mesmas ferramentas, mas a nuvem traz maior agilidade e menor custo de operação durante as fases iniciais e de testes.
+
+---
+
+## 🗄️ Banco de Dados
+
+### 📌 Diagrama Entidade-Relacionamento (DER)
+
+Modelado no **Oracle SQL Developer Data Modeler** com entidades, atributos, relacionamentos, cardinalidades e chaves primárias/estrangeiras.
+
+![DER PreventAI](assets/banco_Relacional.png)  
+_Figura: DER exportado da ferramenta._
+
+![Modelo Lógico](assets/banco_Logical.png)  
+_Figura: Modelo lógico exportado._
+
+### 📖 Descrição (visão resumida)
+
+- **SITE** → plantas industriais; PK: `cd_site`.
+- **LINHA_PRODUCAO** → células por site; PK: `cd_linha`; FK: `cd_site`.
+- **MAQUINA** → equipamento monitorado; PK: `cd_maquina`; FK: `cd_linha`.
+- **TIPO_SENSOR / SENSOR** → catálogo e associação de sensores à máquina; FKs: `cd_tipo_sensor`, `cd_maquina`.
+- **TOPICO_MQTT / MENSAGEM_MQTT** → mensageria e schema do payload.
+- **LEITURA_SENSOR** → medições com timestamp; opcional vínculo à mensagem.
+- **ANOMALIA / ALERTA** → detecção e gestão de eventos críticos.
+- **ORDEM_MANUTENCAO / ACAO_MANUTENCAO** → OS e suas ações/custos.
+- **EVENTO_PARADA / KPI_OEE** → downtime e indicadores por período.
+- **CUSTO_EVIDADO** → estimativas de perdas evitadas (ROI em tempo real).
+- **USUARIO / GAMIFICACAO_EVENTO** → gamificação e pontos.
+- **GEMEO_DIGITAL_MODELO, CENARIO_SIMULACAO, POLITICA_RL, DATASET, TREINO_MODELO** → suporte a xDT, IA e RL.
+
+> As regras de negócio completas estão em `document/Regras de Negocio.pdf`.  
+> A explicação detalhada do MER está em `document/Modelo_Challenge.pdf`.
+
+### 💻 Script SQL Inicial (DDL)
+
+O DDL gerado pelo modelador está em:
+
+---
+
+## 🗄️ Banco de Dados
+
+### 📌 Diagrama Entidade-Relacionamento (DER)
+
+Modelado no **Oracle SQL Developer Data Modeler** com entidades, atributos, relacionamentos, cardinalidades e chaves primárias/estrangeiras.
+
+![DER PreventAI](assets/banco_Relacional.png)  
+_Figura: DER exportado da ferramenta._
+
+![Modelo Lógico](assets/banco_Logical.png)  
+_Figura: Modelo lógico exportado._
+
+### 📖 Descrição (visão resumida)
+
+- **SITE** → plantas industriais; PK: `cd_site`.
+- **LINHA_PRODUCAO** → células por site; PK: `cd_linha`; FK: `cd_site`.
+- **MAQUINA** → equipamento monitorado; PK: `cd_maquina`; FK: `cd_linha`.
+- **TIPO_SENSOR / SENSOR** → catálogo e associação de sensores à máquina; FKs: `cd_tipo_sensor`, `cd_maquina`.
+- **TOPICO_MQTT / MENSAGEM_MQTT** → mensageria e schema do payload.
+- **LEITURA_SENSOR** → medições com timestamp; opcional vínculo à mensagem.
+- **ANOMALIA / ALERTA** → detecção e gestão de eventos críticos.
+- **ORDEM_MANUTENCAO / ACAO_MANUTENCAO** → OS e suas ações/custos.
+- **EVENTO_PARADA / KPI_OEE** → downtime e indicadores por período.
+- **CUSTO_EVITADO** → estimativas de perdas evitadas (ROI em tempo real).
+- **USUARIO / GAMIFICACAO_EVENTO** → gamificação e pontos.
+- **GEMEO_DIGITAL_MODELO, CENARIO_SIMULACAO, POLITICA_RL, DATASET, TREINO_MODELO** → suporte a xDT, IA e RL.
+
+> As regras de negócio completas estão em `document/Regras de Negocio.pdf`.  
+> A explicação detalhada do MER está em `document/Modelo_Challenge.pdf`.
+
+### 💻 Script SQL Inicial (SQL)
+
+O DDL gerado pelo modelador está em `script/preventAI.sql`:
+
+Ele contempla a criação das tabelas, chaves primárias/estrangeiras e restrições de integridade. Ex:
+
+```bash
+CREATE TABLE ACAO_MANUTENCAO
+    (
+     cd_acao          NUMBER  NOT NULL ,
+     cd_os            NUMBER  NOT NULL ,
+     ds_acao          VARCHAR2 (255)  NOT NULL ,
+     responsavel_exec VARCHAR2 (100) ,
+     ts_inicio        TIMESTAMP  NOT NULL ,
+     ts_fim           TIMESTAMP ,
+     custo_real       NUMBER
+    )
+    LOGGING
+;
+
+ALTER TABLE ACAO_MANUTENCAO
+    ADD CONSTRAINT ACAO_MANUTENCAO_PK PRIMARY KEY ( cd_acao ) ;
+
+CREATE TABLE ALERTA
+    (
+     cd_alerta   NUMBER  NOT NULL ,
+     tp_alerta   VARCHAR2 (50)  NOT NULL ,
+     ds_alerta   VARCHAR2 (255)  NOT NULL ,
+     st_alerta   VARCHAR2 (20)  NOT NULL ,
+     prioridade  NUMBER ,
+     ts_emissao  TIMESTAMP  NOT NULL ,
+     cd_anomalia NUMBER  NOT NULL
+    )
+    LOGGING
+;
+```
+
+### 🔮 Integração futura com visualização
+
+- **Grafana + InfluxDB** para séries temporais (sensores).
+- **Power BI / Tableau** para relatórios executivos (OEE, custos evitados, OS).
+- **Streamlit** para painéis interativos técnicos e POCs de ML.
+
+---
+
+Esse script contempla:
+
+- Criação de entidades principais com suas chaves primárias;
+- Definição de relacionamentos e chaves estrangeiras;
+- Restrições de integridade referencial.
+
+---
+
+### 📸 Prints / Exportações Gráficas
+
+As imagens exportadas do **Oracle SQL Developer Data Modeler** encontram-se em:
+
+- `assets/banco_Relacional.png` → Modelo Relacional (DER).
+- `assets/banco_Logical.png` → Modelo Lógico.
+
+---
+
+### 🔮 Previsão de Integração com Ferramentas de Visualização
+
+O banco de dados foi estruturado para **facilitar integrações futuras** com ferramentas de análise e visualização de dados, tais como:
+
+- **Grafana + InfluxDB** → Monitoramento em tempo real das leituras de sensores (séries temporais).
+- **Power BI** → Relatórios financeiros e executivos sobre falhas evitadas e custos associados.
+- **Tableau** → Dashboards estratégicos de desempenho, OEE e manutenção.
+- **Streamlit** → Visualizações interativas para o time técnico e protótipos rápidos.
+
+Além disso, a modelagem contempla entidades dedicadas a **datasets, cenários de simulação e modelos de IA**, permitindo integração direta com pipelines de Machine Learning.
 
 ---
 
@@ -235,14 +395,13 @@ serializeJson(doc, json);
 Serial.println(json);
 
 ```
+
 Circuito montado no Wokwi:
 ![Circuito Montado](assets/circuito.png)
-
 
 Essa implementação possibilita validar a integração de múltiplos sensores e o formato de exportação dos dados, com interface amigável via display.
 
 ---
-
 
 #### 🔧 Sensores Reais com Publicação MQTT
 
@@ -260,7 +419,7 @@ Os dados são publicados em tempo real em um **broker MQTT**, com o tópico `ind
 ```json
 {
   "vibration_g": 1.14,
-  "accel_digital": 0.00,
+  "accel_digital": 0.0,
   "temp_i2c": 24.7,
   "temp_pt100": 24.3,
   "current_A": 2.5,
@@ -270,6 +429,7 @@ Os dados são publicados em tempo real em um **broker MQTT**, com o tópico `ind
   "pressure_mip": 85.2
 }
 ```
+
 Ambos os programas (simulado e template) estão organizados na pasta `/src/esp32`:
 
 ```bash
@@ -279,6 +439,7 @@ Ambos os programas (simulado e template) estão organizados na pasta `/src/esp32
       └── src/   → versão com sensores reais + MQTT
 
 ```
+
 #### 📈 Visualização em Gráfico
 
 Os dados simulados **não foram exportados diretamente do Wokwi** devido à limitação da conta gratuita. No entanto, foi utilizado um **dataset com 10.000 linhas** que será aproveitado para o **treinamento de modelos de Machine Learning nas fases futuras**.
@@ -307,22 +468,27 @@ A análise a seguir detalha cinco indicadores-chave de desempenho (KPIs) de um p
 Com a arquitetura validada, os sensores físicos serão conectados ao ESP32 e configurados para transmitir dados por **MQTT** diretamente ao sistema. Abaixo, os sensores selecionados para coleta industrial precisa:
 
 #### **1. Vibração**
+
 - `ADXL1002` (analógico, leitura via ADC do ESP32)
 - `IIS3DWB` (digital, SPI/I2C via microcontrolador + envio MQTT)
 
 #### **2. Temperatura**
+
 - `TMP117` (I2C, alta precisão)
 - `PT100 + MAX31865` (SPI + leitura via ADC + envio MQTT)
 
 #### **3. Corrente elétrica**
+
 - `ACS770` (sensor de efeito Hall, analógico)
 - `INA219` (I2C, leitura de corrente e potência)
 
 #### **4. Pressão**
+
 - `Honeywell HSC` (I2C, calibrado e digital)
 - `Honeywell MIP` (analógico, saída ratiométrica)
 
 #### **5. Ruído e ultrassom**
+
 - `SPH0641LU4H-1` (PDM via microcontrolador + processamento local)
 - `ICS-43434` (I²S digital para sons mecânicos audíveis)
 
@@ -356,6 +522,7 @@ A seguir, descrevemos o plano de desenvolvimento inicial do projeto, com foco na
 ### 🔄 Etapas do Desenvolvimento (Fase 3)
 
 #### ✅ Estruturação e Base Técnica
+
 - Criação do repositório privado no GitHub com organização de pastas e estrutura inicial de documentação;
 - Levantamento técnico dos sensores reais e simulados;
 - Definição do protocolo de comunicação padrão (MQTT);
@@ -363,6 +530,7 @@ A seguir, descrevemos o plano de desenvolvimento inicial do projeto, com foco na
 - Início da simulação de sensores em Python com envio via MQTT.
 
 #### ✅ Arquitetura, Estratégia de Coleta e Redação
+
 - Finalização da arquitetura visual no diagrams.net;
 - Descrição detalhada da estratégia de coleta de dados (fase simulada + sensores reais);
 - Redação da proposta técnica no `README.md`, incluindo justificativa, tecnologias, funcionalidades e divisão de responsabilidades;
@@ -372,17 +540,15 @@ A seguir, descrevemos o plano de desenvolvimento inicial do projeto, com foco na
 
 ## 👥 Divisão de Responsabilidades entre os Membros
 
-| Integrante               | Responsabilidade Principal                                                                 |
-|--------------------------|---------------------------------------------------------------------------------------------|
-| Jonas Luis da Silva     | Estruturação do repositório GitHub e documentação base (README, estrutura de pastas)        |
-| Renan Francisco de Paula     | Desenvolvimento da simulação de sensores e envio dos dados via MQTT                        |
-| João Vitor Severo Oliveira     | Levantamento técnico e escolha dos sensores reais compatíveis com ESP32                    |
-| Isabelle Gomes Ferreira     | Criação da arquitetura visual no diagrams.net e estruturação do pipeline de dados           |
-| Edson Henrique Felix Batista     | Responsável pela redação técnica da proposta, com foco em coleta de dados, tecnologias empregadas e o Gêmeo Digital Executável     |
+| Integrante                   | Responsabilidade Principal                                                                                                     |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Jonas Luis da Silva          | Estruturação do repositório GitHub e documentação base (README, estrutura de pastas)                                           |
+| Renan Francisco de Paula     | Desenvolvimento da simulação de sensores e envio dos dados via MQTT                                                            |
+| João Vitor Severo Oliveira   | Levantamento técnico e escolha dos sensores reais compatíveis com ESP32                                                        |
+| Isabelle Gomes Ferreira      | Criação da arquitetura visual no diagrams.net e estruturação do pipeline de dados                                              |
+| Edson Henrique Felix Batista | Responsável pela redação técnica da proposta, com foco em coleta de dados, tecnologias empregadas e o Gêmeo Digital Executável |
 
 > A equipe realizará revisões colaborativas ao final de cada etapa para garantir coesão e qualidade técnica na proposta.
-
-
 
 ## 📁 Estrutura de pastas
 
@@ -407,22 +573,30 @@ A arquitetura será representada no app gratuito [https://app.diagrams.net](http
 - Ajustes automáticos baseados em autoaprendizado;
 - Visualização com dashboards dinâmicos e relatórios inteligentes.
 
-
 ![Diagrama de Arquitetura](document/arquitetura.PNG)
 
 ---
 
 ## 🚀 Como executar o projeto
 
-> ⚠️ Nesta etapa não é necessário rodar um sistema funcional. No entanto, deixaremos aqui as instruções para o futuro desenvolvimento.
+## 📦 Documentação via GitHub Público (Checklist)
+
+- [x] Arquivos do projeto de modelagem (`document/Modelo_Challenge.pdf`, `document/Regras de Negocio.pdf`, `.dmd` se aplicável)
+- [x] Imagens do Diagrama ER e modelo lógico (`assets/banco_Relacional.png`, `assets/banco_Logical.png`)
+- [x] Script SQL de criação das tabelas (`scripts/create_tables.sql`)
+- [x] Seção **Banco de Dados** no README (DER, descrição das entidades, prints e integração futura)
+- [x] Descrição de como o banco foi modelado (Oracle Data Modeler)
 
 **Pré-requisitos:**
+
 - Python 3.10+
 - pip ou poetry
 - Conta gratuita AWS ou Google Cloud (opcional)
 
 **Instalação básica (simulada):**
+
 ```bash
 git clone https://github.com/seuusuario/Challenge_Hermes_Reply.git
 cd projeto
 pip install -r requirements.txt
+```
