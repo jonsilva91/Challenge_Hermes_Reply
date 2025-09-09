@@ -172,7 +172,7 @@ Essa abordagem transforma o PreventAI em uma ferramenta **técnica, estratégica
 
 ## 🧠 Visão sobre a Integração com Modelos de IA
 
-Embora os modelos de Inteligência Artificial ainda não estejam implementados nesta fase, a arquitetura proposta já está **completamente preparada para sua integração futura**, com destaque para:
+Embora nem todos os modelos de Inteligência Artificial estejam implementados nesta fase, a arquitetura proposta já está **completamente preparada para sua integração futura**, com destaque para:
 
 - **Modelos Preditivos (Supervisionados)**
 
@@ -221,12 +221,6 @@ Se necessário, a arquitetura poderá ser replicada localmente (on-premises) com
 ### 📌 Diagrama Entidade-Relacionamento (DER)
 
 Modelado no **Oracle SQL Developer Data Modeler** com entidades, atributos, relacionamentos, cardinalidades e chaves primárias/estrangeiras.
-
-![DER PreventAI](assets/banco_Relacional.png)  
-_Figura: DER exportado da ferramenta._
-
-![Modelo Lógico](assets/banco_Logical.png)  
-_Figura: Modelo lógico exportado._
 
 ### 📖 Descrição (visão resumida)
 
@@ -356,6 +350,107 @@ O banco de dados foi estruturado para **facilitar integrações futuras** com fe
 Além disso, a modelagem contempla entidades dedicadas a **datasets, cenários de simulação e modelos de IA**, permitindo integração direta com pipelines de Machine Learning.
 
 ---
+
+## 🤖 Machine Learning Aplicado ao PreventAI
+
+Como primeiro passo de Inteligência Artificial, implementamos um pipeline em **Python/Scikit-learn** (`scripts/ml_pipeline.py`) para **classificar o estado da máquina** em **Normal (0)** ou **Falha (1)** a partir de variáveis operacionais. Esse classificador é o “primeiro guardião” do pipeline: ele antecipa riscos e alimenta as entidades de **ANOMALIA/ALERTA** do banco de dados, reduzindo downtime e custo corretivo.
+
+### 🎯 Objetivo do Modelo e Relação com o Negócio
+
+- **Objetivo:** identificar padrões associados a falhas para **acionar manutenção preventiva** antes que o problema impacte a produção.
+- **Integração com o DER:** previsões de falha geram candidatos a **ANOMALIA**; regras operacionais convertem eventos relevantes em **ALERTA** e, quando necessário, em **ORDEM_MANUTENCAO**. Métricas de treino são registradas em **TREINO_MODELO** e associadas ao **GEMEO_DIGITAL_MODELO**, garantindo rastreabilidade.
+
+### 📂 Dataset
+
+O dataset `predictive_maintenance.csv` contém variáveis comuns em manufatura:
+
+- `Air temperature [K]`
+- `Process temperature [K]`
+- `Rotational speed [rpm]`
+- `Torque [Nm]`
+- `Tool wear [min]`
+- `Target` (0 = Normal, 1 = Falha)
+
+> ⚠️ Observação: o conjunto é **desbalanceado** — há bem mais registros normais que falhas. Isso afeta a interpretação das métricas.
+
+### 🛠️ Pipeline (resumo técnico)
+
+1. **Split estratificado (80/20):** preserva a proporção das classes no treino e teste.
+2. **Padronização:** escalonamento com `StandardScaler`.
+3. **Modelo:** `RandomForestClassifier` com 100 árvores (`n_estimators=100`).
+4. **Avaliação:** relatório de classificação (`classification_report`) e **matriz de confusão**.
+
+### 📊 Resultados e Interpretação
+
+A matriz de confusão obtida no conjunto de teste foi:
+
+![Matriz de Confusão](ml/confusion_matrix.png)
+
+- **TN (1927):** normais corretamente identificadas.
+- **FP (5):** falsos alarmes (normal → falha).
+- **FN (25):** falhas não detectadas.
+- **TP (43):** falhas corretamente detectadas.
+
+**Métricas principais:**
+
+- **Acurácia:** 98,5%
+- **Precisão (classe Falha):** 89,6%
+- **Recall (classe Falha):** 63,2%
+- **F1-score (classe Falha):** 0,74
+- **Especificidade (classe Normal):** 99,7%
+- **Balanced Accuracy:** 81,5%
+
+🔎 **Leitura executiva:** o modelo tem ótima performance para identificar condições normais e emite poucos falsos alarmes. Contudo, deixa de detectar parte das falhas (recall 63%), ponto crítico para manutenção preditiva. O próximo passo é reduzir os **falsos negativos (FNs)**, mesmo que isso aumente os falsos positivos.
+
+### 🚧 Limitações Atuais
+
+- **Desbalanceamento de classes** reduz o recall para falhas.
+- **Poucas variáveis de entrada:** ainda não há sinais brutos (ex.: vibração, corrente).
+- **Sem calibração de limiar:** usamos threshold padrão (0,5).
+
+### 🧭 Próximos Passos
+
+1. **Aumentar Recall:**
+   - Ajustar `class_weight='balanced'`;
+   - Ajustar threshold de decisão com `predict_proba`;
+   - Testar técnicas de balanceamento (SMOTE, undersampling).
+2. **Validação avançada:**
+   - Cross-validation estratificada;
+   - Grid/Random Search de hiperparâmetros.
+3. **Explicabilidade:**
+   - Análise de importâncias de features e SHAP values.
+4. **Engenharia de atributos:**
+   - Variáveis derivadas como `ΔT (process-air)`, proxies de carga (`rpm × torque`), estatísticas móveis.
+5. **Integração operacional:**
+   - Previsões de falha viram registros em **ANOMALIA**;
+   - Abertura de **ALERTA** conforme políticas;
+   - Métricas salvas em **TREINO_MODELO** (com `metricas_json`, `artefato_uri`).
+
+---
+
+# 🎥 Vídeo de Demonstração
+
+Gravamos um vídeo explicativo com cerca de **5 minutos** destacando os principais pontos do projeto:
+
+1. **Banco de Dados**
+
+   - Apresentação do Diagrama Entidade-Relacionamento (DER) e modelo lógico;
+   - Justificativa das entidades principais e integração com as regras de negócio;
+   - Geração do script SQL inicial e exemplos de consultas.
+
+2. **Pipeline de Machine Learning**
+
+   - Estrutura do `ml_pipeline.py` com etapas de pré-processamento, treino e avaliação;
+   - Uso do dataset de manutenção preditiva (`predictive_maintenance.csv`);
+   - Demonstração da **Matriz de Confusão** e interpretação das métricas.
+
+3. **Integração PreventAI**
+   - Como o banco de dados suporta o fluxo de **detecção de falhas → geração de alertas → ordens de manutenção**;
+   - Visão futura de integração com dashboards (Grafana, Power BI, Streamlit) e Gêmeo Digital Executável.
+
+## 📺 **Link do vídeo de demonstração:**
+
+[![Clique aqui para assistir](https://img.youtube.com/vi/b8reOYEs680/mqdefault.jpg)](https://youtu.be/b8reOYEs680)
 
 ## Estratégia de Coleta de Dados
 
