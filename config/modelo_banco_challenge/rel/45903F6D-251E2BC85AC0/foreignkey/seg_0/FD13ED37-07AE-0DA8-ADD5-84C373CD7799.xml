@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FD13ED37-07AE-0DA8-ADD5-84C373CD7799" containerWithKeyObject="1AD49220-5067-710D-F336-86730D2EF281" localFKIndex="A7DBEC19-5BA2-CEB6-990B-60CB3079599F" name="fk_leitura_msg">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>AA9BCC51-DBB4-5470-30F1-B42485F96140</importedID>
+<referredTableLongName>MENSAGEM_MQTT</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E00D60E8-563B-7ED6-DB0F-00354A9EF2F0</referredTableID>
+<keyObject>BDCA13BD-46A7-04B8-4A07-C817F529C625</keyObject>
+<referredKeyID>BDCA13BD-46A7-04B8-4A07-C817F529C625</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>cd_msg</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

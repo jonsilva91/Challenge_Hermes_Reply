@@ -1,0 +1,126 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries\centering}{\thesection}{1em}{}
+\title{\textbf{Modelo Entidade-Relacionamento (MER)\\Flood Sentinel}}
+\date{}
+\usepackage{caption}
+\captionsetup{font=scriptsize} % Reduz ainda mais a fonte das legendas
+\usepackage[utf8]{inputenc}   % Suporte a acentuação direta
+\usepackage[T1]{fontenc}      % Fonte com suporte a caracteres acentuados
+\usepackage[brazil]{babel}    % Idioma português (hifenização correta)
+\usepackage{enumitem}         % Controle avançado de listas (usado no label=RN-x)
+\usepackage{geometry}         % Margens
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+\usepackage{hyperref}         % Links clicáveis
+\usepackage{graphicx}         % Caso precise inserir imagens
+\usepackage{longtable}        % Caso tenha tabelas grandes
+\usepackage{booktabs} 
+\let\oldtextbf\textbf
+\renewcommand{\textbf}[1]{{\footnotesize\oldtextbf{#1}}}
+
+
+
+\begin{document}
+\section*{Regras de Negócio — PreventAI}
+
+\subsection*{Escopo e Objetivos}
+\begin{enumerate}[label=RN-\arabic*,font=\footnotesize]
+\item O sistema PreventAI deve suportar a prevenção de falhas em linhas de produção por meio de coleta de dados via sensores, análise de anomalias, emissão de alertas, abertura de ordens de manutenção, cálculo de OEE e estimativa de custos evitados.
+\end{enumerate}
+
+\subsection*{\small Cadastro e Estrutura Operacional \\ (SITE, LINHA\_PRODUCAO, MAQUINA, SENSOR, TIPO\_SENSOR)}
+\begin{enumerate}[label=RN-1.\arabic*,font=\footnotesize]
+\item Cada \textbf{SITE} deve possuir ao menos uma \textbf{LINHA\_PRODUCAO}; cada \textbf{LINHA\_PRODUCAO} pertence exatamente a um \textbf{SITE}. (Integridade referencial.)
+\item Cada \textbf{MAQUINA} pertence a uma e somente uma \textbf{LINHA\_PRODUCAO}.
+\item Cada \textbf{SENSOR} pertence a uma e somente uma \textbf{MAQUINA}; seu \textit{tipo} deve ser cadastrado em \textbf{TIPO\_SENSOR}.
+\item \textbf{TIPO\_SENSOR} deve definir \textit{unidade}, \textit{faixa operacional} (\textit{vl\_min}, \textit{vl\_max}) e \textit{descrição}; leituras fora de faixa devem ser marcadas como \emph{fora\_de\_especificação}.
+\item Códigos determinantes (\textit{cd\_site}, \textit{cd\_linha}, \textit{cd\_maquina}, \textit{cd\_sensor}, \textit{cd\_tipo\_sensor}) são únicos e imutáveis após criação.
+\end{enumerate}
+
+\subsection*{\small Telemetria e Mensageria \\ (TOPICO\_MQTT, MENSAGEM\_MQTT, LEITURA\_SENSOR)}
+\begin{enumerate}[label=RN-\arabic*,font=\footnotesize ]
+\item Cada \textbf{\footnotesize MENSAGEM\_MQTT} deve estar associada a um \textbf{\footnotesize TOPICO\_MQTT} previamente cadastrado e cumprir o \textit{schema} declarado (validado contra \textit{ds\_schema}, quando disponível).
+\item \textbf{\footnotesize LEITURA\_SENSOR} pode opcionalmente referenciar a \textbf{MENSAGEM\_MQTT} de origem; leituras sem envelope devem registrar \textit{ts\_leitura}, \textit{cd\_sensor} e \textit{vl\_medido}.
+\item O \textit{payload\_json} deve conter \textit{timestamp} (UTC), \textit{identificador do sensor} e \textit{valor}; mensagens sem esses campos são rejeitadas.
+\item Leituras duplicadas (mesmo \textit{cd\_sensor} + \textit{ts\_leitura}) são ignoradas para evitar \emph{double counting}.
+\item Leituras geradas em simulação devem ser marcadas com \textit{origem = ``simulada''}; leituras de chão de fábrica com \textit{origem = ``real''}.
+\end{enumerate}
+
+\subsection*{\small Detecção de Anomalias \\ (ANOMALIA)}
+\begin{enumerate}[label=RN-3.\arabic*, font=\footnotesize]
+\item Toda \textbf{ANOMALIA} deve referenciar o \textbf{SENSOR} em que foi detectada, com \textit{tp\_anomalia}, \textit{score}, \textit{gravidade}, \textit{ts\_inicio} e, quando aplicável, \textit{ts\_fim}.
+\item A \textit{gravidade} é classificada em \{Baixa, Média, Alta, Crítica\} conforme faixas de \textit{score} definidas por política do modelo; alterações nas faixas devem ser versionadas.
+\item Anomalias sobrepostas no mesmo \textit{SENSOR} e janela de tempo devem ser \emph{consolidadas} (mescla) se o \textit{tp\_anomalia} e a \textit{gravidade} forem iguais.
+\item O fechamento de uma anomalia requer condição de normalização (retorno do sinal à faixa operacional) por janela mínima configurável (ex.: 3 amostras consecutivas normais).
+\end{enumerate}
+
+\subsection*{\small Alertas e Priorização \\ (ALERTA)}
+\begin{enumerate}[label=RN-4.\arabic*, font=\footnotesize]
+\item Todo \textbf{ALERTA} deve referenciar uma \textbf{ANOMALIA} (quando aplicável) e conter \textit{tp\_alerta}, \textit{ds\_alerta}, \textit{st\_alerta}, \textit{prioridade} e \textit{ts\_emissao}.
+\item \textit{prioridade} operacional é derivada da \textit{gravidade} da anomalia e da criticidade da \textbf{MAQUINA} (regra de pontuação ponderada).
+\item Estados válidos de \textit{st\_alerta}: \{Aberto, Em Atendimento, Suspenso, Resolvido, Cancelado\}. Transições inválidas são bloqueadas (ex.: \textit{Resolvido} $\rightarrow$ \textit{Aberto}).
+\item Para alertas \textit{Críticos}, é obrigatório definir um responsável operacional no momento da criação.
+\end{enumerate}
+
+\subsection*{\small Manutenção \\ (ORDEM\_MANUTENCAO, ACAO\_MANUTENCAO)}
+\begin{enumerate}[label=RN-5.\arabic*, font=\footnotesize]
+\item Uma \textbf{ORDEM\_MANUTENCAO} pode ser aberta a partir de um \textbf{ALERTA} (\textit{cd\_alerta} opcional) e deve referenciar a \textbf{MAQUINA} afetada.
+\item Estados válidos de OS (\textit{st\_os}): \{Aberta, Planejada, Em Execução, Aguardando Peça, Concluída, Cancelada\}.
+\item Cada \textbf{ACAO\_MANUTENCAO} pertence a uma \textbf{ORDEM\_MANUTENCAO} e deve registrar \textit{ds\_acao}, \textit{ts\_inicio}, \textit{responsavel\_exec} e, quando aplicável, \textit{ts\_fim} e \textit{custo\_real}.
+\item Encerramento da OS (\textit{Concluída}) exige: todas as \textbf{ACAO\_MANUTENCAO} encerradas, causa raiz (\emph{5 porquês} ou equivalente) e teste de retorno à normalidade do sensor.
+\end{enumerate}
+
+\subsection*{\small Paradas e OEE \\ (EVENTO\_PARADA, KPI\_OEE)}
+\begin{enumerate}[label=RN-6.\arabic*, font=\footnotesize]
+\item Cada \textbf{EVENTO\_PARADA} deve referenciar uma \textbf{MAQUINA}, registrar \textit{ts\_inicio}, \textit{ts\_fim}, \textit{duracao\_min} e \textit{motivo} (quando disponível).
+\item Paradas críticas relacionadas a \textbf{ALERTA} ou \textbf{ANOMALIA} devem registrar essa associação para rastreabilidade.
+\item \textbf{KPI\_OEE} deve ser calculado por máquina e período de referência (\textit{dt\_ref}), armazenando \textit{disponibilidade}, \textit{performance}, \textit{qualidade} e \textit{oee}.
+\item Paradas planejadas não devem impactar \textit{qualidade}; paradas não planejadas impactam \textit{disponibilidade}.
+\end{enumerate}
+
+\subsection*{\small Impacto Financeiro \\ (CUSTO\_EVIDADO)}
+\begin{enumerate}[label=RN-7.\arabic*, font=\footnotesize]
+\item Cada registro de \textbf{CUSTO\_EVIDADO} deve referenciar \textbf{ALERTA} e/ou \textbf{ACAO\_MANUTENCAO} e registrar \textit{estimativa\_valor}, \textit{metodologia}, \textit{moeda} e \textit{ts\_registro}.
+\item A \textit{metodologia} deve referenciar parâmetros auditáveis (ex.: custo hora-máquina, MTTR, custo de peça) e a fonte (\emph{policy} financeira).
+\item Reestimativas devem manter histórico de versões, sem sobrescrever valores anteriores.
+\end{enumerate}
+
+\subsection*{\small Gamificaçã \\ (USUARIO, GAMIFICACAO\_EVENTO)}
+\begin{enumerate}[label=RN-8.\arabic*,font=\footnotesize]
+\item Pontos de \textbf{GAMIFICACAO\_EVENTO} são concedidos por ações como: reconhecimento de anomalia real, tempo de resposta ao alerta, correção definitiva confirmada.
+\item Regras de pontuação devem ser públicas e imutáveis por período competitivo; alterações exigem criação de nova versão da política.
+\item Eventos de gamificação devem sempre referenciar o \textbf{USUARIO} e, quando aplicável, o \textbf{ALERTA} relacionado.
+\end{enumerate}
+
+\subsection*{\small IA, xDT e Simulação \\ (GEMEO\_DIGITAL\_MODELO, CENARIO\_SIMULACAO, POLITICA\_RL, DATASET, TREINO\_MODELO)}
+\begin{enumerate}[label=RN-9.\arabic*, font=\footnotesize]
+\item Toda versão de \textbf{GEMEO\_DIGITAL\_MODELO} deve registrar \textit{versao}, \textit{tp\_modelo} e \textit{ds\_hiperparam} (quando aplicável).
+\item Cada \textbf{CENARIO\_SIMULACAO} deve referenciar o \textbf{GEMEO\_DIGITAL\_MODELO} e a \textbf{MAQUINA}, armazenando \textit{parametros\_json} e \textit{resultado\_json}.
+\item \textbf{POLITICA\_RL} deve indicar \textit{algoritmo}, \textit{versao}, \textit{recompensa\_media}, \textit{cd\_modelo} e \textit{st\_implantada}; somente políticas com testes aprovados podem ser \textit{implantadas}.
+\item Cada \textbf{TREINO\_MODELO} deve referenciar um \textbf{DATASET} audível (\textit{nm\_dataset}, \textit{fonte}, \textit{num\_registros}, \textit{caminho\_arquivo}) e registrar \textit{tp\_problema}, \textit{algoritmo}, \textit{metricas\_json} e \textit{artefato\_uri}.
+\item Resultados de modelos que afetem operação devem ter \emph{circuit breaker}: ao detectar taxa de erro acima de limiar por janela de tempo, reverter para política anterior estável.
+\end{enumerate}
+
+\subsection*{\small Segurança, Auditoria e Conformidade}
+\begin{enumerate}[label=RN-10.\arabic*, font=\footnotesize]
+\item Eventos críticos (criação/fechamento de \textbf{ANOMALIA}, emissão/fechamento de \textbf{ALERTA}, abertura/encerramento de \textbf{ORDEM\_MANUTENCAO}) devem gerar trilha de auditoria contendo \textit{quem}, \textit{quando}, \textit{o quê} e \textit{antes/depois}.
+\item Perfis de \textbf{USUARIO} devem limitar ações (ex.: Operador pode reconhecer alerta; Engenheiro pode fechar anomalia; Gestor pode aprovar custos evitados).
+\item Dados pessoais (ex.: e-mail) devem seguir política LGPD; exportações devem anonimizar campos pessoais quando não estritamente necessários.
+\end{enumerate}
+
+\subsection*{\small Qualidade e Governança de Dados}
+\begin{enumerate}[label=RN-11.\arabic*, font=\footnotesize]
+\item Leituras com \textit{ts\_leitura} fora de sincronismo (drift de clock acima do limiar) devem ser marcadas e não podem alimentar KPIs até correção.
+\item Amostras faltantes em janelas curtas podem ser \emph{interpoladas} apenas para visualização; cálculos de OEE e modelos não devem usar valores interpolados sem flag explícita.
+\item Mudanças de unidade em \textbf{TIPO\_SENSOR} exigem migração de dados ou \emph{view} de conversão; é vedada a alteração retroativa silenciosa.
+\end{enumerate}
+
+\end{document}

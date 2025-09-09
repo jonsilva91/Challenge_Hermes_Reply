@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_alerta_anomalia" directorySegmentName="seg_0" id="3C0ECC31-D4E0-B98B-4BCA-8A71FB95EE8D">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>C97F93DB-C34A-F19D-F80E-22009FDC1B04</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<sourcePk>FB917B53-988C-48B2-C6CD-4A760BF40DA1</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>0B6110AF-3DB1-DA66-B3D5-0F34820367B3</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>3482709E-C676-1716-E00D-CEF1A6957A72</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

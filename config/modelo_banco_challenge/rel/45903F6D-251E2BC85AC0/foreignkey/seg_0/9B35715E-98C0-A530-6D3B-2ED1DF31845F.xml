@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9B35715E-98C0-A530-6D3B-2ED1DF31845F" containerWithKeyObject="E00D60E8-563B-7ED6-DB0F-00354A9EF2F0" localFKIndex="4D73C3C4-18F2-D02E-4856-94A65B7A6C20" name="fk_msg_topico">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>D7B62C2E-2593-9CA7-B7DD-E0667F3F0CFA</importedID>
+<referredTableLongName>TOPICO_MQTT</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E4C1FF87-B8D4-1908-BE7C-49C8EC24DA64</referredTableID>
+<keyObject>044BE80C-D78D-BAB8-F9F9-1AAB37B3C686</keyObject>
+<referredKeyID>044BE80C-D78D-BAB8-F9F9-1AAB37B3C686</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_topico</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

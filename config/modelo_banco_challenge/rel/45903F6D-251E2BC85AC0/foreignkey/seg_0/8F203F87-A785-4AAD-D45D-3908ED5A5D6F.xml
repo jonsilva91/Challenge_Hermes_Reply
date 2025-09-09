@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="8F203F87-A785-4AAD-D45D-3908ED5A5D6F" containerWithKeyObject="14A2FD24-50E6-7122-96DF-E1EF44878A42" localFKIndex="5E98D347-8CBC-06E1-F88A-E53EC99E8CA4" name="fk_anomalia_sensor">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>536232A3-5949-ECCD-09F0-684B0217FD00</importedID>
+<referredTableLongName>SENSOR</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>383D700C-F068-00D7-E3BF-79F8862E209B</referredTableID>
+<keyObject>8CDAFDCA-8AEB-09F8-1688-940EBEB84B4B</keyObject>
+<referredKeyID>8CDAFDCA-8AEB-09F8-1688-940EBEB84B4B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_sensor</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

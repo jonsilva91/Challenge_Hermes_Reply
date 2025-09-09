@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B40E778B-B828-E3BD-155A-BE3FF25EBCA3" containerWithKeyObject="1AD49220-5067-710D-F336-86730D2EF281" localFKIndex="E8FE621A-4908-3D79-DB12-2696D8B76C8D" name="fk_leitura_sensor">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>9206526E-8A6E-EB28-704B-4D30944D1D4C</importedID>
+<referredTableLongName>SENSOR</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>383D700C-F068-00D7-E3BF-79F8862E209B</referredTableID>
+<keyObject>8CDAFDCA-8AEB-09F8-1688-940EBEB84B4B</keyObject>
+<referredKeyID>8CDAFDCA-8AEB-09F8-1688-940EBEB84B4B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_sensor</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

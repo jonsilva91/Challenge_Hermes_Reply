@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_anomalia_sensor" directorySegmentName="seg_0" id="1BD2F2F5-456E-BFBD-E572-AD22DB27FD76">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>8F203F87-A785-4AAD-D45D-3908ED5A5D6F</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<sourcePk>458207F5-1F18-EAC9-EBB6-7ECF049BEC4A</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>78AB0EF7-A7E8-200E-10C5-F219B24A2875</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>0B6110AF-3DB1-DA66-B3D5-0F34820367B3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

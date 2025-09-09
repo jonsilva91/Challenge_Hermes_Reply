@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="36A7AC9B-4CF8-C31D-1D26-301B45FD9BA8" containerWithKeyObject="8C7E2DB6-C010-E3C2-10FE-33CAE6FD5B59" localFKIndex="1848C919-D20C-8160-CF07-BFFF66B516B4" name="fk_maquina_linha">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>25E36370-C692-BB74-CA40-400A46945E2B</importedID>
+<referredTableLongName>LINHA_PRODUCAO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>9F2409BA-CD03-56BA-0BCC-D615B038B6A8</referredTableID>
+<keyObject>837906E7-B641-B3A6-FA2D-9A32F1CE7530</keyObject>
+<referredKeyID>837906E7-B641-B3A6-FA2D-9A32F1CE7530</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_linha</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

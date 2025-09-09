@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="93FE5878-A6E3-238E-1D49-AED2A0569156" containerWithKeyObject="E9B78EC6-C20D-CA9C-247D-1B6EE80293B3" localFKIndex="40C82BD3-3A7C-C65E-454F-1D5747759C26" name="fk_os_alerta">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>75CE4E99-6470-07AE-2ECE-70F8FDAA0B91</importedID>
+<referredTableLongName>ALERTA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>266C9AAD-193A-0DF0-1798-214A5288A566</referredTableID>
+<keyObject>10FB8131-89C5-3CA7-70EF-413E4278BEF2</keyObject>
+<referredKeyID>10FB8131-89C5-3CA7-70EF-413E4278BEF2</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>cd_alerta</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

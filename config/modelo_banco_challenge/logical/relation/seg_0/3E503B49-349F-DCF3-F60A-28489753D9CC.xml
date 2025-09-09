@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_msg_topico" directorySegmentName="seg_0" id="3E503B49-349F-DCF3-F60A-28489753D9CC">
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:33 UTC</createdTime>
+<generatorID>9B35715E-98C0-A530-6D3B-2ED1DF31845F</generatorID>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<engineerTo>
+<item key="45903F6D-9D46-8CDD-E31F-251E2BC85AC0" value="true"/>
+</engineerTo>
+<sourcePk>75CB3188-1B0C-C6EB-221B-0CDE16794A48</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>EBBAF942-4D9E-94D6-492C-509DA84D15DC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>7C9740AD-9A3A-95D0-A90B-F9FC9EF9BF0A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,743 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage[table]{xcolor} % Adicionado para colorir as tabelas
+\usepackage{xcolor}
+% Configuração do cabeçalho e rodapé
+\pagestyle{fancy}
+\fancyhf{} % Limpa os campos de cabeçalho e rodapé
+\renewcommand{\headrulewidth}{0pt} % Remove a linha do cabeçalho
+\fancyfoot[C]{\thepage} % Número da página no centro do rodapé
+
+% Comando para o cabeçalho vermelho da tabela
+\definecolor{vermelhoheader}{HTML}{800000}
+
+% Comando para linha de cabeçalho da tabela
+\newcommand{\redrow}{\rowcolor{vermelhoheader}\color{white}\textbf}
+
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.2}
+
+\title{PreventAI — Entidades e Relacionamentos (MER)}
+\author{Equipe Rocket}
+\date{\today}
+
+\begin{document}
+
+\fancypagestyle{plain}{\pagestyle{plain}}
+
+\begin{center}
+    \large{\textbf{PreventAI}} \\
+    \normalsize{Modelo de Entidades e Relacionamentos (MER)} \\
+\end{center}
+\vspace{1cm}
+
+\section*{Entidades, Atributos e Tipos de Atributos}
+
+\subsection*{ENTIDADE: SITE}
+Representa a planta industrial (local físico) onde estão linhas e máquinas.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_site & Simples, determinante & 1 & 1 \\
+nm\_site & Simples & 1 & 1 \\
+sg\_pais & Simples & 1 & 1 \\
+nm\_cidade & Simples & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade SITE e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:site}
+\end{table}
+
+\subsection*{ENTIDADE: LINHA\_PRODUCAO}
+Agrupa máquinas por linha/célula dentro de um site.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_linha & Simples, determinante & 1 & 1 \\
+nm\_linha & Simples & 1 & 1 \\
+cd\_site & Simples, estrangeiro & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade LINHA\_PRODUCAO e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:linha_producao}
+\end{table}
+
+\subsection*{ENTIDADE: MAQUINA}
+Equipamento monitorado pelo gêmeo digital (xDT).
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_maquina & Simples, determinante & 1 & 1 \\
+nm\_maquina & Simples & 1 & 1 \\
+tp\_maquina & Simples & 1 & 1 \\
+nm\_fabricante & Simples & 0 & 1 \\
+nm\_modelo & Simples & 0 & 1 \\
+cd\_linha & Simples, estrangeiro & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade MAQUINA e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:maquina}
+\end{table}
+
+\subsection*{ENTIDADE: TIPO\_SENSOR}
+Catálogo de tipos/unidades e faixas operacionais.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_tipo\_sensor & Simples, determinante & 1 & 1 \\
+ds\_tipo & Simples & 1 & 1 \\
+unidade & Simples & 1 & 1 \\
+vl\_min & Simples & 0 & 1 \\
+vl\_max & Simples & 0 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade TIPO\_SENSOR e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:tipo_sensor}
+\end{table}
+
+\subsection*{ENTIDADE: SENSOR}
+Dispositivo físico associado a uma máquina.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_sensor & Simples, determinante & 1 & 1 \\
+tp\_sensor & Simples & 1 & 1 \\
+nm\_modelo & Simples & 0 & 1 \\
+unidade & Simples & 1 & 1 \\
+cd\_tipo\_sensor & Simples, estrangeiro & 1 & 1 \\
+cd\_maquina & Simples, estrangeiro & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade SENSOR e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:sensor}
+\end{table}
+
+\subsection*{ENTIDADE: TOPICO\_MQTT}
+Tópicos de publicação/assinatura.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_topico & Simples, determinante & 1 & 1 \\
+nm\_topico & Simples & 1 & 1 \\
+ds\_schema & Simples & 0 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade TOPICO\_MQTT e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:topico_mqtt}
+\end{table}
+
+\subsection*{ENTIDADE: MENSAGEM\_MQTT}
+Envelope técnico recebido/enviado no broker.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_msg & Simples, determinante & 1 & 1 \\
+cd\_topico & Simples, estrangeiro & 1 & 1 \\
+ts\_evento & Simples & 1 & 1 \\
+payload\_json & Simples & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade MENSAGEM\_MQTT e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:mensagem_mqtt}
+\end{table}
+
+\subsection*{ENTIDADE: LEITURA\_SENSOR}
+Snapshot relacional de séries temporais (espelho do InfluxDB).
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_leitura & Simples, determinante & 1 & 1 \\
+cd\_sensor & Simples, estrangeiro & 1 & 1 \\
+ts\_leitura & Simples & 1 & 1 \\
+vl\_medido & Simples & 1 & 1 \\
+cd\_msg & Simples, estrangeiro & 0 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade LEITURA\_SENSOR e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:leitura_sensor}
+\end{table}
+
+\subsection*{ENTIDADE: ANOMALIA}
+Eventos detectados (outlier, drift, padrão de falha).
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_anomalia & Simples, determinante & 1 & 1 \\
+tp\_anomalia & Simples & 1 & 1 \\
+score & Simples & 1 & 1 \\
+gravidade & Simples & 1 & 1 \\
+cd\_sensor & Simples, estrangeiro & 1 & 1 \\
+ts\_inicio & Simples & 1 & 1 \\
+ts\_fim & Simples & 0 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade ANOMALIA e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:anomalia}
+\end{table}
+
+\subsection*{ENTIDADE: ORDEM\_MANUTENCAO}
+Integração ERP/MES/CMMS.
+\begin{center}
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_os & Simples, determinante & 1 & 1 \\
+num\_os\_ext & Simples & 0 & 1 \\
+tp\_os & Simples & 1 & 1 \\
+st\_os & Simples & 1 & 1 \\
+ts\_abertura & Simples & 1 & 1 \\
+ts\_fechamento & Simples & 0 & 1 \\
+cd\_alerta & Simples, estrangeiro & 0 & 1 \\
+cd\_maquina & Simples, estrangeiro & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{ENTIDADE: ACAO\_MANUTENCAO}
+Passos executados numa OS.
+\begin{center}
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_acao & Simples, determinante & 1 & 1 \\
+cd\_os & Simples, estrangeiro & 1 & 1 \\
+ds\_acao & Simples & 1 & 1 \\
+responsavel\_exec & Simples & 0 & 1 \\
+ts\_inicio & Simples & 1 & 1 \\
+ts\_fim & Simples & 0 & 1 \\
+custo\_real & Simples & 0 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{ENTIDADE: EVENTO\_PARADA}
+Downtime de máquinas.
+\begin{center}
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_parada & Simples, determinante & 1 & 1 \\
+cd\_maquina & Simples, estrangeiro & 1 & 1 \\
+ts\_inicio & Simples & 1 & 1 \\
+ts\_fim & Simples & 1 & 1 \\
+motivo & Simples & 0 & 1 \\
+duracao\_min & Simples & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{ENTIDADE: KPI\_OEE}
+Indicadores agregados por período.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_kpi & Simples, determinante & 1 & 1 \\
+cd\_maquina & Simples, estrangeiro & 1 & 1 \\
+dt\_ref & Simples & 1 & 1 \\
+disponibilidade & Simples & 1 & 1 \\
+performance & Simples & 1 & 1 \\
+qualidade & Simples & 1 & 1 \\
+oee & Simples & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade KPI\_OEE e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:kpi_oee}
+\end{table}
+
+\subsection*{ENTIDADE: CUSTO\_EVIDADO}
+Registro financeiro de perdas evitadas (ROI em tempo real).
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_custo & Simples, determinante & 1 & 1 \\
+cd\_alerta & Simples, estrangeiro & 0 & 1 \\
+cd\_acao & Simples, estrangeiro & 0 & 1 \\
+estimativa\_valor & Simples & 1 & 1 \\
+metodologia & Simples & 1 & 1 \\
+moeda & Simples & 1 & 1 \\
+ts\_registro & Simples & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade CUSTO\_EVIDADO e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:custo_evitado}
+\end{table}
+
+\subsection*{ENTIDADE: USUARIO}
+Usuários/operadores para uso e gamificação.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_usuario & Simples, determinante & 1 & 1 \\
+nm\_usuario & Simples & 1 & 1 \\
+perfil & Simples & 1 & 1 \\
+email & Simples & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade USUARIO e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:usuario}
+\end{table}
+
+\subsection*{ENTIDADE: GAMIFICACAO\_EVENTO}
+Pontuação e recompensas por ações.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_evento\_gam & Simples, determinante & 1 & 1 \\
+cd\_usuario & Simples, estrangeiro & 1 & 1 \\
+tp\_evento & Simples & 1 & 1 \\
+pontos & Simples & 1 & 1 \\
+ts\_evento & Simples & 1 & 1 \\
+cd\_alerta & Simples, estrangeiro & 0 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade GAMIFICACAO\_EVENTO e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:gamificacao_evento}
+\end{table}
+
+\subsection*{ENTIDADE: GEMEO\_DIGITAL\_MODELO}
+Versões do modelo físico-informado/simulação (xDT).
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_modelo & Simples, determinante & 1 & 1 \\
+versao & Simples & 1 & 1 \\
+tp\_modelo & Simples & 1 & 1 \\
+ds\_hiperparam & Simples & 0 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade GEMEO\_DIGITAL\_MODELO e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:gemeo_digital_modelo}
+\end{table}
+
+\subsection*{ENTIDADE: CENARIO\_SIMULACAO}
+Cenários what-if executados no xDT.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_cenario & Simples, determinante & 1 & 1 \\
+cd\_modelo & Simples, estrangeiro & 1 & 1 \\
+cd\_maquina & Simples, estrangeiro & 1 & 1 \\
+nm\_cenario & Simples & 1 & 1 \\
+parametros\_json & Simples & 1 & 1 \\
+ts\_execucao & Simples & 1 & 1 \\
+resultado\_json & Simples & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade CENARIO\_SIMULACAO e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:cenario_simulacao}
+\end{table}
+
+\subsection*{ENTIDADE: POLITICA\_RL}
+Políticas de aprendizado por reforço.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_politica & Simples, determinante & 1 & 1 \\
+algoritmo & Simples & 1 & 1 \\
+versao & Simples & 1 & 1 \\
+recompensa\_media & Simples & 0 & 1 \\
+cd\_modelo & Simples, estrangeiro & 1 & 1 \\
+st\_implantada & Simples & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade POLITICA\_RL e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:politica_rl}
+\end{table}
+
+\subsection*{ENTIDADE: DATASET}
+Conjuntos de dados usados em ML/IA generativa.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_dataset & Simples, determinante & 1 & 1 \\
+nm\_dataset & Simples & 1 & 1 \\
+fonte & Simples & 1 & 1 \\
+num\_registros & Simples & 0 & 1 \\
+caminho\_arquivo & Simples & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade DATASET e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:dataset}
+\end{table}
+
+\subsection*{ENTIDADE: TREINO\_MODELO}
+Rastreamento de experimentos/artefatos de ML.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{| l | l | c | c |}
+\hline
+\rowcolor{red}\color{white}\textbf{Atributo} & \color{white}\textbf{Tipo do Atributo} & \color{white}\textbf{Card. Mínima} & \color{white}\textbf{Card. Máxima} \\
+\hline
+cd\_treino & Simples, determinante & 1 & 1 \\
+cd\_dataset & Simples, estrangeiro & 1 & 1 \\
+tp\_problema & Simples & 1 & 1 \\
+algoritmo & Simples & 1 & 1 \\
+metricas\_json & Simples & 1 & 1 \\
+artefato\_uri & Simples & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Entidade TREINO\_MODELO e seus respectivos atributos, tipos e cardinalidade.}
+\label{tab:treino_modelo}
+\end{table}
+
+\newpage
+% ==============================
+\section*{Relacionamentos}
+\small
+\subsection*{SITE — LINHA\_PRODUCAO}
+Uma site possui várias linhas; cada linha pertence a um site.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+SITE & 1 & N \\
+LINHA\_PRODUCAO & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\hfill
+\subsection*{LINHA\_PRODUCAO — MAQUINA}
+Uma linha tem várias máquinas; cada máquina pertence a uma linha.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+LINHA\_PRODUCAO & 1 & N \\
+MAQUINA & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{0.5cm}
+
+\subsection*{MAQUINA — SENSOR}
+Uma máquina pode ter muitos sensores; cada sensor pertence a uma máquina.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+MAQUINA & 1 & N \\
+SENSOR & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\hfill
+\subsection*{TIPO\_SENSOR — SENSOR}
+Um tipo cataloga muitos sensores; cada sensor referencia um tipo.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+TIPO\_SENSOR & 1 & N \\
+SENSOR & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{0.5cm}
+
+\subsection*{TOPICO\_MQTT — MENSAGEM\_MQTT}
+Um tópico recebe muitas mensagens; cada mensagem pertence a um tópico.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+TOPICO\_MQTT & 1 & N \\
+MENSAGEM\_MQTT & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\hfill
+\subsection*{MENSAGEM\_MQTT — LEITURA\_SENSOR}
+Uma mensagem pode conter múltiplas leituras; cada leitura pode referenciar a mensagem de origem.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+MENSAGEM\_MQTT & 0 & N \\
+LEITURA\_SENSOR & 0 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{0.5cm}
+
+\subsection*{SENSOR — LEITURA\_SENSOR}
+Um sensor gera muitas leituras; cada leitura é de um sensor.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+SENSOR & 1 & N \\
+LEITURA\_SENSOR & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\hfill
+\subsection*{SENSOR — ANOMALIA}
+Um sensor pode originar várias anomalias; cada anomalia é detectada em um sensor.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+SENSOR & 1 & N \\
+ANOMALIA & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{0.5cm}
+
+\subsection*{ANOMALIA — ALERTA}
+Uma anomalia pode disparar múltiplos alertas; cada alerta referencia uma anomalia.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+ANOMALIA & 1 & N \\
+ALERTA & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\hfill
+\subsection*{ALERTA — ORDEM\_MANUTENCAO}
+Um alerta pode (ou não) abrir uma OS; uma OS geralmente se origina de 1 alerta.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+ALERTA & 0 & 1 \\
+ORDEM\_MANUTENCAO & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{0.5cm}
+
+\subsection*{ORDEM\_MANUTENCAO — ACAO\_MANUTENCAO}
+Uma OS possui várias ações; cada ação pertence a uma OS.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+ORDEM\_MANUTENCAO & 1 & N \\
+ACAO\_MANUTENCAO & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\hfill
+\subsection*{MAQUINA — EVENTO\_PARADA}
+Uma máquina pode ter várias paradas; cada parada pertence a uma máquina.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+MAQUINA & 1 & N \\
+EVENTO\_PARADA & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{0.5cm}
+
+\subsection*{MAQUINA — KPI\_OEE}
+Indicadores agregados por máquina/período.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+MAQUINA & 1 & N \\
+KPI\_OEE & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\hfill
+\subsection*{ALERTA — CUSTO\_EVIDADO}
+Custos evitados podem ser atribuídos ao alerta.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+ALERTA & 0 & N \\
+CUSTO\_EVIDADO & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{0.5cm}
+
+\subsection*{ACAO\_MANUTENCAO — CUSTO\_EVIDADO}
+Custos evitados podem ser atribuídos à ação.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+ACAO\_MANUTENCAO & 0 & N \\
+CUSTO\_EVIDADO & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\hfill
+\subsection*{USUARIO — GAMIFICACAO\_EVENTO}
+Um usuário recebe vários eventos/pontos; cada evento pertence a um usuário.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+USUARIO & 1 & N \\
+GAMIFICACAO\_EVENTO & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{0.5cm}
+
+\subsection*{GEMEO\_DIGITAL\_MODELO — CENARIO\_SIMULACAO}
+Um modelo (versão) gera vários cenários; cada cenário referencia um modelo.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+GEMEO\_DIGITAL\_MODELO & 1 & N \\
+CENARIO\_SIMULACAO & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\hfill
+\subsection*{GEMEO\_DIGITAL\_MODELO — POLITICA\_RL}
+Uma política RL é treinada/associada a uma versão do xDT; várias políticas por modelo.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+GEMEO\_DIGITAL\_MODELO & 1 & N \\
+POLITICA\_RL & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{0.5cm}
+
+\subsection*{MAQUINA — CENARIO\_SIMULACAO}
+Cenários what-if executados para uma máquina específica.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+MAQUINA & 1 & N \\
+CENARIO\_SIMULACAO & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\hfill
+\subsection*{DATASET — TREINO\_MODELO}
+Um dataset alimenta vários treinamentos; cada treino referencia um dataset.
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\rowcolor{vermelhoheader}\color{white}\textbf{Entidade} & \textbf{Card. Mínima} & \textbf{Card. Máxima} \\
+\hline
+DATASET & 1 & N \\
+TREINO\_MODELO & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\end{document}

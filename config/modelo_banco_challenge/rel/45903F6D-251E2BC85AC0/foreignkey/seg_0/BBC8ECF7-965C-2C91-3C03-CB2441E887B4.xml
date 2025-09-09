@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BBC8ECF7-965C-2C91-3C03-CB2441E887B4" containerWithKeyObject="383D700C-F068-00D7-E3BF-79F8862E209B" localFKIndex="C37B4929-5D42-B6AF-B3C2-04BEE3CE3D97" name="fk_sensor_tipo">
+<sourceDDLFile>preventAI.ddl</sourceDDLFile>
+<createdBy>JonasLuisdaSilva</createdBy>
+<createdTime>2025-09-03 23:05:15 UTC</createdTime>
+<ownerDesignName>modelo_banco_challenge</ownerDesignName>
+<importedID>E662682A-2320-6205-F26A-3C3B89DC8F61</importedID>
+<referredTableLongName>TIPO_SENSOR</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>7B475246-88DA-B3BC-5B43-E4F83B0129F1</referredTableID>
+<keyObject>ABFBCB19-1025-81E2-B932-4AFB69B98527</keyObject>
+<referredKeyID>ABFBCB19-1025-81E2-B932-4AFB69B98527</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cd_tipo_sensor</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
