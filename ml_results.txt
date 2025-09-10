@@ -1,0 +1,36 @@
+Resumo das Métricas - Classificação de Falha
+============================================
+
+Matriz de Confusão:
+------------------
+[[1927    5]
+ [  25   43]]
+
+Classification Report:
+----------------------
+
+Classe 0 (Normal):
+  Precisão: 0.99
+  Recall: 1.00
+  F1-Score: 0.99
+  Suporte: 1932
+
+Classe 1 (Falha):
+  Precisão: 0.90
+  Recall: 0.63
+  F1-Score: 0.74
+  Suporte: 68
+
+Média Macro:
+  Precisão: 0.94
+  Recall: 0.81
+  F1-Score: 0.87
+
+Média Ponderada:
+  Precisão: 0.98
+  Recall: 0.99
+  F1-Score: 0.98
+
+Imagem da Matriz de Confusão:
+-----------------------------
+/ml/confusion_matrix.png
