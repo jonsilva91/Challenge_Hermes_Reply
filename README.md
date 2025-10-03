@@ -428,6 +428,53 @@ A matriz de confusão obtida no conjunto de teste foi:
 
 ---
 
+## 🚀 Entrega 4: Pipeline Integrado Fim-a-Fim (MVP)
+
+Para a quarta e última entrega, integramos todos os componentes desenvolvidos nas fases anteriores em um **pipeline funcional de ponta a ponta**. O objetivo foi demonstrar o fluxo completo de dados, desde a simulação da coleta até a visualização de resultados e alertas em um dashboard, consolidando a visão de arquitetura em um MVP (Mínimo Produto Viável).
+
+### ⛓️ Fluxo de Dados Implementado
+
+O MVP implementado segue a arquitetura proposta, conectando as seguintes etapas:
+
+1.  **Coleta e Ingestão (Simulada)**:
+    -   **Carga Inicial**: O script `db/load_data.py` lê o dataset `predictive_maintenance.csv` e popula o banco de dados PostgreSQL, simulando a existência de dados históricos.
+    -   **Ingestão Contínua**: O script `ingest/simulate_data.py` simula o envio de novas leituras de sensores em tempo real, inserindo-as diretamente na tabela `LEITURA_SENSOR` do banco de dados.
+
+2.  **Armazenamento em Banco de Dados**:
+    -   Utilizamos o **PostgreSQL** como banco de dados relacional. O script `scripts/preventAI.sql` foi adaptado para ser compatível com PostgreSQL, definindo toda a estrutura de tabelas e relacionamentos.
+
+3.  **Modelo de Machine Learning**:
+    -   O pipeline em `ml/ml_pipeline.py` foi mantido para treinar o modelo `RandomForestClassifier`. Ele agora salva a **matriz de confusão** como uma imagem (`ml/confusion_matrix.png`), que é consumida pelo dashboard para visualização dos resultados.
+
+4.  **Visualização e Alertas (Dashboard)**:
+    -   Foi criado um dashboard interativo com **Streamlit** (`dashboard/app.py`).
+    -   **Conexão Direta com o Banco**: O dashboard lê os dados diretamente do PostgreSQL para exibir KPIs.
+    -   **KPIs em Tempo Real (Simulado)**: Exibe métricas como número de sensores, total de leituras e temperatura média.
+    -   **Resultados de ML**: Apresenta a matriz de confusão gerada pelo pipeline de ML.
+    -   **Sistema de Alerta**: Implementa uma regra simples que dispara um alerta visual se a temperatura média ultrapassar um limite pré-definido (`305.0 K`).
+
+### ⚙️ Como Executar o Fluxo Completo
+
+Para executar o projeto e ver o pipeline em ação, siga os passos abaixo na ordem correta:
+
+1.  **Configurar o Ambiente**:
+    - Instale o PostgreSQL e crie um banco de dados.
+    - Crie um arquivo `.env` na raiz do projeto com suas credenciais do banco.
+    - Instale as dependências: `pip install -r requirements.txt`.
+
+2.  **Criar as Tabelas no Banco**:
+    - Execute o script `scripts/preventAI.sql` no seu cliente PostgreSQL para criar toda a estrutura do banco de dados.
+
+3.  **Carregar os Dados Históricos**:
+    - `python db/load_data.py`
+
+4.  **Treinar o Modelo de ML**:
+    - `python ml/ml_pipeline.py`
+
+5.  **Iniciar o Dashboard e a Simulação**:
+    - Em um terminal, inicie o dashboard: `streamlit run dashboard/app.py`
+    - (Opcional) Em outro terminal, inicie a ingestão de dados em tempo real: `python ingest/simulate_data.py`
+
 # 🎥 Vídeo de Demonstração
 
 Gravamos um vídeo explicativo com cerca de **5 minutos** destacando os principais pontos do projeto:
