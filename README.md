@@ -17,9 +17,16 @@ Este projeto, desenvolvido para o desafio da **Hermes Reply**, consiste em um MV
 
 A solução utiliza um banco de dados PostgreSQL para persistência, um modelo de Machine Learning (`RandomForestClassifier`) para detecção de anomalias e um dashboard em Streamlit para monitoramento, demonstrando um fluxo de dados coeso e funcional.
 
+## 🎯 Objetivos do MVP
+
+- **Integrar** os componentes das entregas anteriores (arquitetura, coleta, banco de dados e ML) em um fluxo fim-a-fim.
+- **Demonstrar** a coleta, ingestão, armazenamento e análise de dados de forma coesa.
+- **Visualizar** KPIs operacionais e resultados do modelo de ML em um dashboard.
+- **Implementar** um sistema de alerta simples baseado em thresholds.
+
 ## 🧱 Arquitetura da Solução
 
-!Diagrama de Arquitetura
+![Diagrama de Arquitetura](assets/banco_Relacional.png)
 _Figura: Arquitetura do pipeline de dados, da coleta à visualização._
 
 ## 🧰 Tecnologias Utilizadas
@@ -31,13 +38,13 @@ _Figura: Arquitetura do pipeline de dados, da coleta à visualização._
 - **Visualização e Dashboard:** `Streamlit`
 - **Orquestração e Deploy (Visão):** `Docker`, `Apache Airflow`
 
-## ⚙️ Como Executar o MVP Final
+## ⚙️ Como Executar o MVP
 
 Para executar o projeto e ver o pipeline em ação, siga os passos abaixo na ordem correta:
 
 1.  **Configurar o Ambiente**:
     -   Clone este repositório.
-    -   Crie um arquivo `.env` na raiz do projeto com as credenciais do seu banco de dados PostgreSQL (recomenda-se usar o Neon). Use o exemplo abaixo:
+    -   Crie um arquivo `.env` na raiz do projeto com as credenciais do seu banco de dados PostgreSQL (recomenda-se usar o **Neon** para facilitar). Use o exemplo abaixo:
     ```
     # .env
     DB_NAME="seu_banco"
@@ -49,7 +56,7 @@ Para executar o projeto e ver o pipeline em ação, siga os passos abaixo na ord
     -   Instale as dependências: `pip install -r requirements.txt`.
 
 2.  **Criar as Tabelas no Banco**:
-    -   Execute o conteúdo do script `scripts/preventAI.sql` no seu cliente PostgreSQL (como DBeaver ou o SQL Editor do Neon) para criar toda a estrutura de tabelas.
+    -   Execute o conteúdo do script `scripts/preventAI.sql` no seu cliente PostgreSQL (como DBeaver ou o **SQL Editor** do Neon) para criar a estrutura de tabelas.
 
 3.  **Carregar os Dados Históricos**:
     -   Execute o script para popular o banco com o dataset inicial.
@@ -63,11 +70,10 @@ Para executar o projeto e ver o pipeline em ação, siga os passos abaixo na ord
     python ml/ml_pipeline.py
     ```
 
-----
 5.  **Iniciar o Dashboard e a Simulação**:
     -   Em um terminal, inicie o dashboard:
     ```bash
-    python -m streamlit run dashboard/app.py
+    streamlit run dashboard/app.py
     ```
     -   (Opcional) Em **outro terminal**, inicie a ingestão de dados em tempo real para ver os KPIs se atualizando (requer atualização manual da página do dashboard):
     ```bash
@@ -76,27 +82,27 @@ Para executar o projeto e ver o pipeline em ação, siga os passos abaixo na ord
 
 ## 🎥 Vídeo de Demonstração
 
-[!Clique aqui para assistir](https://youtu.be/b8reOYEs680)
+Um vídeo de 5 minutos foi gravado para demonstrar o projeto fim-a-fim, explicando a arquitetura, o fluxo de dados e os resultados.
+
+**[▶️ Assista ao vídeo de demonstração no YouTube](https://youtu.be/b8reOYEs680)**
 
 ---
 
 ## 📚 Histórico de Desenvolvimento (Entregas Anteriores)
 
-----
-Esta seção detalha o trabalho realizado nas sprints anteriores, que serviram de base para o MVP final.
+Esta seção detalha o trabalho realizado nas sprints anteriores, que culminaram no MVP final.
 
 ### 🎯 Visão de Longo Prazo do Projeto
 
 A visão completa do PreventAI inclui o desenvolvimento de um **Gêmeo Digital Executável (xDT)**, uma réplica virtual dos ativos industriais que permite simulações dinâmicas, geração de cenários com IA generativa e aprendizado autônomo para otimização de processos. A solução também prevê autonomia proativa com **Aprendizado por Reforço (RL)** e um sistema de **gamificação** para engajar os operadores.
 
-----
 ### 🗄️ Entrega 1: Modelagem do Banco de Dados
 
 O projeto iniciou com a modelagem de um banco de dados relacional no **Oracle SQL Developer Data Modeler**. O modelo foi projetado para ser escalável e suportar todas as funcionalidades da visão de longo prazo.
 
 **Diagrama Entidade-Relacionamento (DER):**
 
-!DER PreventAI
+![DER PreventAI](assets/banco_Relacional.png)
 _Figura: DER exportado da ferramenta._
 
 **Principais Entidades:**
@@ -117,7 +123,7 @@ A estratégia de coleta foi validada com um **ESP32**, primeiramente em ambiente
 ----
 **Simulação via Wokwi:**
 
-!Circuito Montado
+![Circuito Montado](assets/banco_Logical.png)
 _Figura: Circuito simulado no Wokwi com sensores virtuais e display LCD._
 
 **Análise Exploratória:**
@@ -132,15 +138,22 @@ Implementamos um pipeline em `Python/Scikit-learn` para classificar o estado da 
 
 **Modelo:** `RandomForestClassifier` com 100 árvores.
 
-**Resultados:**
+**Resultados (Após Otimização):**
 
-!Matriz de Confusão
+![Matriz de Confusão](ml/confusion_matrix.png)
 _Figura: Matriz de confusão do modelo no conjunto de teste._
 
-- **Acurácia:** 98,5%
-- **Recall (classe Falha):** 63,2%
+- **Acurácia:** 99%
+- **Recall (classe Falha):** 75%
 
-**Leitura executiva:** O modelo é bom para identificar condições normais, mas precisa de melhorias para reduzir os falsos negativos (falhas não detectadas), que são o ponto mais crítico para a manutenção preditiva.
+**Leitura executiva:** O modelo inicial apresentava um bom desempenho geral, mas um Recall de 63% para a classe "Falha" era um risco de negócio. Após a aplicação de **Engenharia de Atributos** (criação das features `Power` e `TempDiff`) e o tratamento do **desbalanceamento de classes** (`class_weight='balanced'`), o **Recall aumentou para 75%**. Essa otimização torna o modelo muito mais eficaz em seu objetivo principal: detectar o máximo de falhas possível, mesmo que isso aumente ligeiramente os falsos alarmes.
+
+## 💡 Decisões Técnicas
+
+- **Banco de Dados na Nuvem (Neon):** Optamos pelo Neon (PostgreSQL Serverless) para eliminar a necessidade de instalação local, simplificar o setup e garantir um ambiente de banco de dados profissional e escalável.
+- **Otimização do Modelo de ML:** O foco na métrica de **Recall** durante a otimização com `GridSearchCV` foi uma decisão de negócio para minimizar o risco de falhas não detectadas, que são mais custosas do que falsos positivos.
+- **Engenharia de Atributos:** A criação de novas features (`Power` e `TempDiff`) foi fundamental para fornecer mais contexto ao modelo e melhorar sua capacidade de encontrar padrões complexos, resultando em um aumento significativo no desempenho.
+- **Dashboard (Streamlit):** A escolha do Streamlit permitiu o desenvolvimento rápido de um dashboard interativo para visualização de KPIs e resultados, conectando-se diretamente ao banco de dados para exibir dados em tempo real (simulado).
 
 > O código do pipeline está em `ml/ml_pipeline.py`.
 

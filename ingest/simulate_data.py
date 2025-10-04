@@ -4,6 +4,8 @@ import time
 import random
 from dotenv import load_dotenv
 from datetime import datetime
+import matplotlib.pyplot as plt
+import pandas as pd
 
 # Carregar variáveis de ambiente
 load_dotenv()
@@ -16,7 +18,7 @@ DB_HOST = os.getenv("DB_HOST", "localhost")
 DB_PORT = os.getenv("DB_PORT", "5432")
 
 
-def insert_simulated_reading():
+def insert_simulated_reading(readings_list):
     """Insere uma leitura simulada no banco de dados."""
     conn = None
     try:
@@ -41,6 +43,9 @@ def insert_simulated_reading():
         print(
             f"[{timestamp}] Leitura inserida: Sensor {sensor_id}, Valor {valor_medido:.2f}")
 
+        # Adiciona a leitura à lista para o gráfico
+        readings_list.append({'timestamp': timestamp, 'valor': valor_medido})
+
     except Exception as e:
         print(f"Erro ao inserir leitura: {e}")
     finally:
@@ -49,7 +54,29 @@ def insert_simulated_reading():
 
 
 if __name__ == "__main__":
-    print("Iniciando simulação de ingestão de dados... Pressione CTRL+C para parar.")
-    while True:
-        insert_simulated_reading()
-        time.sleep(5)  # Insere uma nova leitura a cada 5 segundos
+    print("Iniciando simulação de ingestão de dados para 20 leituras...")
+    simulated_readings = []
+    num_readings = 20
+
+    for i in range(num_readings):
+        insert_simulated_reading(simulated_readings)
+        time.sleep(1)  # Insere uma nova leitura a cada 1 segundo
+
+    print("\nSimulação concluída. Gerando gráfico...")
+
+    # Cria o gráfico com os dados coletados
+    df = pd.DataFrame(simulated_readings)
+    plt.figure(figsize=(10, 5))
+    plt.plot(df['timestamp'], df['valor'], marker='o', linestyle='-')
+    plt.title('Leituras Simuladas do Sensor de Temperatura')
+    plt.xlabel('Timestamp')
+    plt.ylabel('Temperatura (K)')
+    plt.grid(True)
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+
+    # Salva o gráfico na pasta /ingest
+    output_path = os.path.join(os.path.dirname(
+        __file__), "ingestao_simulada.png")
+    plt.savefig(output_path)
+    print(f"Gráfico salvo em: {output_path}")

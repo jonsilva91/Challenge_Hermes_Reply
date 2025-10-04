@@ -82,16 +82,27 @@ try:
 
     # --- Resultados do Modelo de ML ---
     st.header("🤖 Resultados do Machine Learning")
-    st.markdown(
-        "O modelo `RandomForestClassifier` foi treinado com os dados do banco para prever falhas.")
+    st.markdown("""
+    Um modelo de **Machine Learning** (`RandomForestClassifier`) foi treinado para analisar os dados dos sensores e prever possíveis falhas na máquina.
+    A matriz abaixo mostra o desempenho do modelo em dados de teste:""")
 
     # Exibe a matriz de confusão gerada pelo script de ML
-    if os.path.exists("ml/confusion_matrix.png"):
-        st.image("ml/confusion_matrix.png",
-                 caption="Matriz de Confusão do Modelo")
-    else:
-        st.warning(
-            "Arquivo 'ml/confusion_matrix.png' não encontrado. Execute o pipeline de ML primeiro.")
+    col1_ml, col2_ml = st.columns(2)
+    with col1_ml:
+        if os.path.exists("ml/confusion_matrix.png"):
+            st.image("ml/confusion_matrix.png",
+                     caption="Matriz de Confusão do Modelo Otimizado")
+        else:
+            st.warning(
+                "Matriz de confusão não encontrada. Execute o pipeline de ML.")
+
+    with col2_ml:
+        if os.path.exists("ml/feature_importance.png"):
+            st.image("ml/feature_importance.png",
+                     caption="Importância das Features")
+        else:
+            st.warning(
+                "Gráfico de importância não encontrado. Execute o pipeline de ML.")
 
 except Exception as e:
     st.error(f"Erro ao conectar ao banco de dados ou buscar dados: {e}")
