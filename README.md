@@ -79,7 +79,7 @@ Para executar o projeto e ver o pipeline em ação, siga os passos abaixo na ord
 5.  **Iniciar o Dashboard e a Simulação**:
     -   Em um terminal, inicie o dashboard:
     ```bash
-    streamlit run dashboard/app.py
+    python -m streamlit run dashboard/app.py
     ```
     -   (Opcional) Em **outro terminal**, inicie a ingestão de dados em tempo real para ver os KPIs se atualizando (requer atualização manual da página do dashboard):
     ```bash
