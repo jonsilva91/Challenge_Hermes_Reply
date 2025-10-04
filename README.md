@@ -90,7 +90,7 @@ Para executar o projeto e ver o pipeline em ação, siga os passos abaixo na ord
 
 Um vídeo de 5 minutos foi gravado para demonstrar o projeto fim-a-fim, explicando a arquitetura, o fluxo de dados e os resultados.
 
-**[▶️ Assista ao vídeo de demonstração no YouTube](https://youtu.be/b8reOYEs680)**
+**[▶️ Assista ao vídeo de demonstração no YouTube](https://youtu.be/hw74C549Pmw?si=FXBw9v5-A7RHgtDw)**
 
 ---
 
