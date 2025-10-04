@@ -10,6 +10,12 @@
 
 ## 👨‍🎓 Integrantes:
 
+- Jonas Luis da Silva
+- Renan Francisco de Paula
+- João Vitor Severo Oliveira
+- Isabelle Gomes Ferreira
+- Edson Henrique Felix Batista
+
 
 ## 📜 Descrição
 
@@ -26,7 +32,7 @@ A solução utiliza um banco de dados PostgreSQL para persistência, um modelo d
 
 ## 🧱 Arquitetura da Solução
 
-![Diagrama de Arquitetura](assets/banco_Relacional.png)
+![Diagrama de Arquitetura](document/arquitetura.PNG)
 _Figura: Arquitetura do pipeline de dados, da coleta à visualização._
 
 ## 🧰 Tecnologias Utilizadas
@@ -105,6 +111,11 @@ O projeto iniciou com a modelagem de um banco de dados relacional no **Oracle SQ
 ![DER PreventAI](assets/banco_Relacional.png)
 _Figura: DER exportado da ferramenta._
 
+**Banco logico:**
+
+![Banco logico](assets/banco_Logical.png)
+_Figura: Figura do banco logico, representação._
+
 **Principais Entidades:**
 
 - **Estrutura:** `SITE`, `LINHA_PRODUCAO`, `MAQUINA`, `SENSOR`.
@@ -114,23 +125,38 @@ _Figura: DER exportado da ferramenta._
 - **IA e Simulação:** `GEMEO_DIGITAL_MODELO`, `TREINO_MODELO`.
 
 ----
-> O script SQL de criação (`DDL`) está em `scripts/preventAI.sql`.
+> O script SQL de criação (`DDL`) está em `db/preventAI.sql`.
 
 ### 📡 Entrega 2: Estratégia de Coleta de Dados com ESP32
 
 A estratégia de coleta foi validada com um **ESP32**, primeiramente em ambiente simulado (`Wokwi`) e depois com um template para sensores reais e comunicação via `MQTT`.
 
+**Circuito de Simulação (Wokwi):**
+
+![Circuito](assets/circuito.png)
+_Figura: Circuito de simulação no Wokwi com sensores virtuais e display LCD._
+
+**Execução do Simulador de Ingestão:**
+
+![Ingestao](assets/execucao_simulador.png)
+_Figura: Print da execução do script `ingest/simulate_data.py`._
+
 ----
-**Simulação via Wokwi:**
-
-![Circuito Montado](assets/banco_Logical.png)
-_Figura: Circuito simulado no Wokwi com sensores virtuais e display LCD._
-
 **Análise Exploratória:**
 
 Utilizamos o dataset `predictive_maintenance.csv` para realizar uma análise exploratória e gerar visualizações iniciais, como a relação entre temperatura e tempo de uso da ferramenta.
 
 > O código do ESP32 está na pasta `src/esp32`.
+
+**Gráfico da Ingestão Simulada:**
+
+![Gráfico Ingestão](assets/ingestao_simulada.png)
+_Figura: Gráfico gerado pelo script de ingestão, mostrando as leituras simuladas._
+
+**Evidência de Carga no Banco:**
+
+![Evidência Carga](assets/evidencia_carga.png)
+_Figura: Evidência da carga de dados no banco de dados PostgreSQL._
 
 ### 🤖 Entrega 3: Pipeline de Machine Learning
 
@@ -168,24 +194,6 @@ _Figura: Matriz de confusão do modelo no conjunto de teste._
 | João Vitor Severo Oliveira   | Levantamento técnico dos sensores.                              |
 | Isabelle Gomes Ferreira      | Criação da arquitetura visual e pipeline de dados.              |
 | Edson Henrique Felix Batista | Redação técnica da proposta e conceito do Gêmeo Digital.        |
-
-----
-----
-----
-----
-----
-----
-----
-----
-----
-----
-----
-----
-----
-----
-| João Vitor Severo Oliveira   | Levantamento técnico e escolha dos sensores reais compatíveis com ESP32                                                        |
-| Isabelle Gomes Ferreira      | Criação da arquitetura visual no diagrams.net e estruturação do pipeline de dados                                              |
-| Edson Henrique Felix Batista | Responsável pela redação técnica da proposta, com foco em coleta de dados, tecnologias empregadas e o Gêmeo Digital Executável |
 
 ## 📁 Estrutura de Pastas
 
