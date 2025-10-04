@@ -20,8 +20,12 @@ def insert_simulated_reading():
     """Insere uma leitura simulada no banco de dados."""
     conn = None
     try:
-        conn = psycopg2.connect(
-            dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST, port=DB_PORT)
+        conn_string = (
+            f"dbname='{DB_NAME}' user='{DB_USER}' password='{DB_PASS}' "
+            f"host='{DB_HOST}' port='{DB_PORT}' sslmode='require'"
+        )
+        conn = psycopg2.connect(conn_string)
+
         cur = conn.cursor()
 
         # Simula leitura de um sensor de temperatura (ID 1)

@@ -21,14 +21,31 @@ def setup_database():
     conn = None
     try:
         # Conectar ao banco de dados
-        conn = psycopg2.connect(
-            dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST, port=DB_PORT
+        conn_string = (
+            f"dbname='{DB_NAME}' user='{DB_USER}' password='{DB_PASS}' "
+            f"host='{DB_HOST}' port='{DB_PORT}' sslmode='require'"
         )
+        conn = psycopg2.connect(conn_string)
+
         cur = conn.cursor()
 
         print("Limpando tabelas existentes...")
         cur.execute(
-            "TRUNCATE TABLE LEITURA_SENSOR, SENSOR, TIPO_SENSOR RESTART IDENTITY CASCADE;")
+            "TRUNCATE TABLE LEITURA_SENSOR, SENSOR, TIPO_SENSOR, MAQUINA, LINHA_PRODUCAO, SITE RESTART IDENTITY CASCADE;")
+
+        # --- Inserir Dados Estruturais (Site, Linha, Máquina) ---
+        print("Inserindo dados estruturais (Site, Linha, Máquina)...")
+        # 1. Site
+        cur.execute(
+            "INSERT INTO SITE (cd_site, nm_site, sg_pais, nm_cidade) VALUES (%s, %s, %s, %s)",
+            (1, 'Planta Sorocaba', 'BR', 'Sorocaba'))
+        # 2. Linha de Produção
+        cur.execute(
+            "INSERT INTO LINHA_PRODUCAO (cd_linha, nm_linha, cd_site) VALUES (%s, %s, %s)",
+            (1, 'Linha de Montagem A', 1))
+        # 3. Máquina
+        cur.execute("INSERT INTO MAQUINA (cd_maquina, nm_maquina, tp_maquina, cd_linha) VALUES (%s, %s, %s, %s)",
+                    (1, 'Prensa Hidráulica 01', 'Prensa', 1))
 
         # --- Inserir Tipos de Sensores ---
         print("Inserindo tipos de sensores...")
@@ -51,7 +68,10 @@ def setup_database():
 
         # --- Carregar e Inserir Leituras ---
         print("Carregando dados do CSV para o banco...")
-        df = pd.read_csv("ml/predictive_maintenance.csv")
+        # Ajuste de caminho relativo para funcionar a partir da pasta /db
+        csv_path = os.path.join(os.path.dirname(
+            __file__), '..', 'ml', 'predictive_maintenance.csv')
+        df = pd.read_csv(csv_path)
 
         # Mapear nomes de colunas para IDs de sensor
         col_to_sensor_id = {
@@ -59,10 +79,17 @@ def setup_database():
             "Rotational speed [rpm]": 3, "Torque [Nm]": 4, "Tool wear [min]": 5
         }
 
-        leituras = []
-        for _, row in df.iterrows():
-            for col, sensor_id in col_to_sensor_id.items():
-                leituras.append((sensor_id, datetime.now(), row[col]))
+        # Otimização: Usar pd.melt para transformar os dados de wide para long format
+        # É ordens de magnitude mais rápido que iterar com df.iterrows()
+        print("Transformando dados para formato de inserção (long format)...")
+        df_long = df[list(col_to_sensor_id.keys())].melt(
+            var_name='coluna', value_name='vl_medido')
+        df_long['cd_sensor'] = df_long['coluna'].map(col_to_sensor_id)
+        df_long['ts_leitura'] = datetime.now()  # Timestamp único para o batch
+
+        # Converte o DataFrame para uma lista de tuplas para o execute_values
+        leituras = list(df_long[['cd_sensor', 'ts_leitura', 'vl_medido']].itertuples(
+            index=False, name=None))
 
         execute_values(
             cur, "INSERT INTO LEITURA_SENSOR (cd_sensor, ts_leitura, vl_medido) VALUES %s", leituras)

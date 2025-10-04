@@ -17,13 +17,12 @@ DB_PORT = os.getenv("DB_PORT", "5432")
 
 def get_db_connection():
     """Estabelece conexão com o banco de dados PostgreSQL."""
-    conn = psycopg2.connect(
-        dbname=DB_NAME,
-        user=DB_USER,
-        password=DB_PASS,
-        host=DB_HOST,
-        port=DB_PORT
+    # String de conexão completa, ideal para serviços em nuvem como o Neon
+    conn_string = (
+        f"dbname='{DB_NAME}' user='{DB_USER}' password='{DB_PASS}' "
+        f"host='{DB_HOST}' port='{DB_PORT}' sslmode='require'"
     )
+    conn = psycopg2.connect(conn_string)
     return conn
 
 
